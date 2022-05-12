@@ -1,0 +1,145 @@
+@use '../styles/variables';
+
+$height: 50px;
+$mobile-height: 40px;
+
+.outerContainer {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transition: background-color 0.3s ease-out, border-bottom 0.3s ease-out;
+}
+
+.solidBackground {
+    background-color: variables.$background-color;
+    border-bottom: 2px solid variables.$foreground-color;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: $height;
+  width: 100%;
+  padding: 0 20px;
+  font-weight: 100;
+
+  li {
+    display: inline-block;
+    margin-left: 4vw;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    user-select: none;
+
+    &:hover {
+        background-color: rgba(variables.$foreground-color, 0.3);
+        &.navButton {
+            background: none;
+        }
+    }
+
+    &.navButton {
+        padding: 0;
+    }
+  }
+}
+
+.image {
+  display: inline-block;
+  margin-right: 5px;
+  img {
+    height: $height !important;
+  }
+}
+
+.dropdownButton {
+    display: none;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    width: 1.25rem;
+
+    span {
+        font-size: $mobile-height;
+    }
+}
+
+.dropdownIcon {
+    transform: rotate(180deg);
+    opacity: 0;
+    user-select: none;
+    transition: transform 0.5s, opacity 0.5s;
+    position: absolute;
+
+    &.activeIcon {
+        transform: none;
+        opacity: 1;
+    }
+}
+
+.dropdownMenu {
+    background-color: variables.$background-color;
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    font-weight: 300;
+    font-size: 30px;
+    margin: 0;
+    top: -600px;
+    transition: top 0.5s ease-out;
+    border-bottom: 2px solid variables.$foreground-color;
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+
+    &.menuOpen {
+        top: calc($mobile-height + 20px);
+    }
+
+    li {
+        user-select: none;
+        cursor: pointer;
+        &:active {
+            color: variables.$theme-light;
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .linksList {
+        display: none !important;
+    }
+    
+    .dropdownButton {
+        display: flex !important;
+    }
+
+    .image img {
+        height: $mobile-height !important;
+    }
+
+    .container {
+        height: $mobile-height !important;
+    }
+
+    .outerContainer {
+        background-color: variables.$background-color;
+        border-bottom: 2px solid variables.$foreground-color;
+    }
+
+    .dropdownMenu {
+        display: flex;
+    }
+}
+
+li.highlightColor {
+    color: variables.$theme-light;
+    &:active {
+        color: variables.$foreground-color;
+    }
+}

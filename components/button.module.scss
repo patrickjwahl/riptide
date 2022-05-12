@@ -1,0 +1,56 @@
+@use '../styles/variables';
+
+$hover-bkg-color: variables.$theme-light;
+$hover-color: variables.$foreground-color;
+
+$primary-bkg-color: variables.$theme-light;
+$primary-hover-bkg-color: variables.$foreground-color;
+$primary-hover-color: variables.$background-color;
+
+@mixin background-properties {
+    background-size: 0 0;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.container {
+    border: 1px solid;
+    border-radius: 0.3vw;
+    padding: 0.5vw 1.5vw;
+    display: inline-block;
+    cursor: pointer;
+    user-select: none;
+
+    @include background-properties;
+    background-image: radial-gradient($hover-bkg-color 0%, $hover-bkg-color 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 100%);
+    transition: background-size 0.4s ease-out, color 0.4s, border-color 0.4s;
+
+    &:hover {
+        background-size: 1000px 1000px;
+        border-color: $hover-bkg-color;
+        color: $hover-color
+    }
+
+    &:active {
+        filter: brightness(0.75);
+    }
+}
+
+.primary {
+    background-color: $primary-bkg-color;
+    @include background-properties;
+    background-image: radial-gradient($primary-hover-bkg-color 0%, $primary-hover-bkg-color 50%, $primary-bkg-color 50%, $primary-bkg-color 100%);
+    border: 1px solid $primary-bkg-color;
+    transition: background-size 0.4s ease-out, color 0.4s;
+
+    &:hover {
+        background-size: 1000px 1000px;
+        color: $primary-hover-color;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .container {
+        border-radius: 5px;
+    }
+}

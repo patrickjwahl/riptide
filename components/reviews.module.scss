@@ -1,0 +1,40 @@
+@use '../styles/variables';
+
+.swiper {
+    width: 50vw;
+    height: 300px;
+    background-color: variables.$theme-dark;
+    border-radius: 50px;
+    outline: 4px solid variables.$foreground-color;
+    outline-offset: 8px;
+}
+
+.swiperSlide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 75px;
+    text-align: center;
+}
+
+.reviewAuthor {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.stars {
+    color: gold;
+    letter-spacing: 1500px;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 992px) {
+    .swiper {
+        width: 100%;
+        outline: none;
+        border-radius: 0;
+        height: 50vh;
+    }
+}

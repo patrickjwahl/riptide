@@ -1,0 +1,210 @@
+@use '../styles/variables';
+
+@media screen and (max-width: 992px) {
+    .heroContainer {
+        display: none;
+    }
+    .mobileHeroContainer {
+        display: block !important;
+    }
+    .banner {
+        margin-right: 0 !important;
+        font-size: 4vw !important;
+        width: 75% !important;
+        box-shadow: none !important;
+    }
+    .mainContainer {
+        position: absolute !important;
+        top: 90% !important;
+        z-index: 1 !important;
+        width: 100%;
+    }
+    .keyPoints h1 {
+        font-size: 7vw !important;
+        transform: none !important;
+    }
+    .keyPoint {
+        transform: none !important;
+        transition: opacity 0.6s ease-out !important;
+        &.middle {
+            transition-delay: 0.5s !important;
+        }
+        &.right {
+            transition-delay: 1s !important;
+        }
+    }
+    .keyPointsList {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 0 50px !important;
+        margin-bottom: 30px;
+        li {
+            flex: none !important;
+            max-width: none !important;
+        }
+        .keyPointsTitle {
+            margin: 5px 0;
+        }
+    }
+    .keyPointsText {
+        font-size: 4vw;
+    }
+    .prompt {
+        font-size: 5vw !important;
+        padding: 0 50px;
+    }
+    .promptButtons {
+        flex-direction: column;
+        align-items: center;
+        font-size: 6vw;
+    }
+    .smallText {
+        font-size: 4vw;
+    }
+}
+
+.mainContainer {
+    background-color: variables.$theme-dark;
+    z-index: 4;
+    position: relative;
+    top: -7vw;
+    border-top: 2px solid variables.$foreground-color;
+}
+
+.bkgImage {
+    filter: blur(10px);
+    transition: filter 0.5s;
+}
+
+.bkgVisible {
+    filter: none;
+}
+
+.bannerContainer {
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    top: 40%;
+    justify-content: flex-end;
+    opacity: 0;
+    transform: translateX(50vw);
+    transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+}
+
+.mobileBannerContainer {
+    width: 100%;
+    position: absolute;
+    top: 60%;
+    display: flex;
+    justify-content: center;
+}
+
+.banner {
+    text-align: center;
+    font-weight: 500;
+    width: 40%;
+    font-size: 3vw;
+    margin-right: 4vw;
+    background-color: rgba(variables.$theme-dark, 0.75);
+    box-shadow: 0 0 15px 20px rgba(variables.$theme-dark, 0.75);
+    padding: 30px;
+    
+    p {
+        margin: 0;
+    }
+}
+
+.heroContainer {
+    position: relative;
+    top: calc(-1 * (450px - 20vw));
+}
+
+.mobileHeroContainer {
+    display: none;
+}
+
+.heroButton {
+    font-size: 2.2vw;
+    font-weight: 300;
+    background-color: variables.$theme-light;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 30px;
+}
+
+.keyPoints {
+    text-align: center;
+
+    h1 {
+        font-size: 3.4vw;
+        font-weight: 600;
+        transform: skew(-15deg, 0);
+        padding: 20px 0 10px 0;
+    }
+}
+
+.keyPointsList {
+    display: flex;
+    padding: 0 0 40px 0;
+    justify-content: space-evenly;
+
+    li {
+        flex: 1 1 0px;
+        max-width: 25vw;
+
+        span {
+            font-size: 42px;
+        }
+    }
+}
+
+.keyPointsTitle {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.prompt {
+    font-size: 1.8vw;
+    font-weight: 400;
+}
+
+.promptButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+    margin-top: 20px;
+    padding-bottom: 40px;
+}
+
+.keyPoint {
+    opacity: 0;
+    transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+    will-change: opacity;
+}
+
+.left {
+    transform: translateX(-20vw);
+}
+    
+.middle {
+    transform: translateY(20vh);
+}
+
+.right {
+    transform: translateX(20vw);
+}
+
+.isVisible {
+    opacity: 1;
+    transform: none;
+}
+
+.reviewContainer {
+    background-color: variables.$theme-light;
+    padding: 40px 0;
+}
