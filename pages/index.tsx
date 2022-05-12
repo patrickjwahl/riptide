@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
-import Navbar from '../components/navbar'
 import Button from '../components/button'
 import Reviews from '../components/reviews'
 import Image from 'next/image'
@@ -9,6 +8,8 @@ import backgroundImageMobile from '../public/img/hero-bkg-mobile.jpg'
 import { useParallax } from 'react-scroll-parallax'
 import cn from 'classnames'
 import { useState, useRef, useEffect } from 'react'
+import Layout from '../components/layout'
+import { ReactElement } from 'react'
 
 const Home = () => {
     const { ref: parallaxRef } = useParallax({speed: -100});
@@ -17,7 +18,6 @@ const Home = () => {
     const keyPointsRef = useRef(null);
 
     const [ bannerVisible, setBannerVisible ] = useState<boolean>(false);
-    const [ navbarTransparent, setNavbarTransparent ] = useState<boolean>(true);
 
     useEffect(() => {
         const { innerWidth: viewportWidth } = window;
@@ -31,22 +31,14 @@ const Home = () => {
     }, [keyPointsRef, keyPointsVisible]);
 
     useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-    }, []);
-
-    const handleScroll = (event) => {
-        let scrollTop = window.scrollY;
-        console.log(scrollTop);
-        setNavbarTransparent(scrollTop < 200);
-    }
-
-    useEffect(() => {
         setBannerVisible(true);
     }, [bannerVisible]);
 
     return (
         <div style={{overflowX: 'hidden'}}>
-        <Navbar isTransparent={navbarTransparent} />
+            <Head>
+                <title>Riptide K9 | Oahu's Best Dog Trainers</title>
+            </Head>
             <div ref={parallaxRef as React.RefObject<HTMLDivElement>} className={styles.heroContainer}>
                 <Image src={backgroundImage} width={1278} height={660} layout="responsive" alt="doggie" className={cn(styles.bkgImage, {[styles.bkgVisible]: bannerVisible})} />
                 <div className={cn(styles.bannerContainer, {[styles.isVisible]: bannerVisible})}>
@@ -59,11 +51,11 @@ const Home = () => {
             </div>
             <div className={styles.mobileHeroContainer}>
                 <Image src={backgroundImageMobile} layout="responsive" width={654} height={1365} alt="doggie" className={styles.mobileBkgImage} />
-                <div className={styles.mobileBannerContainer}>
+                <div className={cn(styles.mobileBannerContainer, {[styles.isVisible]: bannerVisible})}>
                     <div className={styles.banner}>
-                        <p>IT'S NOT JUST TRAINING.</p>
-                        <p>IT'S UNDERSTANDING.</p>
-                        <Button isPrimary={true} style={{fontSize: '7vw', fontWeight: '300', marginTop: '20px'}}>GET STARTED</Button>
+                        <p>CUM SLUT PISS.</p>
+                        <p>FAT FUCK TASSONI.</p>
+                        <Button isPrimary={true} style={{fontSize: '7vw', fontWeight: '300', marginTop: '20px'}}>SUCK A DICK</Button>
                     </div>
                 </div>
             </div>
@@ -100,6 +92,14 @@ const Home = () => {
             </div>
         </div>
     )
+}
+
+Home.getLayout = (page: ReactElement) => {
+    return (
+        <Layout containsHero={true}>
+            {page}
+        </Layout>
+    );
 }
 
 export default Home;

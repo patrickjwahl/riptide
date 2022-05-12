@@ -1,10 +1,11 @@
 @use '../styles/variables';
 
 $hover-bkg-color: variables.$theme-light;
-$hover-color: variables.$foreground-color;
+$hover-color: variables.$background-color;
 
-$primary-bkg-color: variables.$theme-light;
-$primary-hover-bkg-color: variables.$foreground-color;
+$primary-color: variables.$foreground-color;
+$primary-bkg-color: variables.$highlight-color;
+$primary-hover-bkg-color: variables.$theme-light;
 $primary-hover-color: variables.$background-color;
 
 @mixin background-properties {
@@ -38,6 +39,7 @@ $primary-hover-color: variables.$background-color;
 
 .primary {
     background-color: $primary-bkg-color;
+    color: $primary-color;
     @include background-properties;
     background-image: radial-gradient($primary-hover-bkg-color 0%, $primary-hover-bkg-color 50%, $primary-bkg-color 50%, $primary-bkg-color 100%);
     border: 1px solid $primary-bkg-color;

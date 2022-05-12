@@ -1,6 +1,6 @@
 import styles from './navbar.module.scss';
 import Image from 'next/image';
-import logoImage from '../public/img/riptide.svg'
+import logoImage from '../public/img/riptide-logo.png'
 import titleImage from '../public/img/title.png'
 import Button from './button'
 import cn from 'classnames'
@@ -10,15 +10,15 @@ import Link from 'next/link'
 interface Props {
     /** Should background be transparent? */
     isTransparent?: boolean;
+
+    /** Is the dropdown menu open? */
+    dropdownOpen: boolean;
+
+    /** Function to toggle dropdown */
+    toggleDropdown: () => void;
 }
 
-const Navbar = ({ isTransparent = false, ...otherProps }: Props) => {
-
-    const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
-
-    const handleDropdownButtonClick = (event) => {
-        setDropdownOpen(!dropdownOpen);
-    };
+const Navbar = ({ isTransparent = false, dropdownOpen, toggleDropdown, ...otherProps }: Props) => {
 
     return (
         <>
@@ -26,7 +26,7 @@ const Navbar = ({ isTransparent = false, ...otherProps }: Props) => {
             <div className={styles.container}>
                 <Link href="/">
                     <a>
-                        <div className={styles.image}>
+                        <div className={cn(styles.image, styles.logo)}>
                             <Image src={logoImage} alt="logo" />
                         </div>
                         <div className={styles.image}>
@@ -42,7 +42,7 @@ const Navbar = ({ isTransparent = false, ...otherProps }: Props) => {
                         <Button>SCHEDULE A CONSULTATION</Button>
                     </li>
                 </ul>
-                <div className={styles.dropdownButton} onClick={handleDropdownButtonClick}>
+                <div className={styles.dropdownButton} onClick={toggleDropdown}>
                     <span className={cn('material-symbols-outlined', styles.dropdownIcon, {[styles.activeIcon]: !dropdownOpen})}>menu</span>
                     <span className={cn('material-symbols-outlined', styles.dropdownIcon, {[styles.activeIcon]: dropdownOpen})}>close</span>
                 </div>
