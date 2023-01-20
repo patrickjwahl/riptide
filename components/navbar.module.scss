@@ -1,8 +1,5 @@
 @use '../styles/variables';
 
-$height: 50px;
-$mobile-height: 40px;
-
 .outerContainer {
   position: fixed;
   width: 100%;
@@ -21,7 +18,7 @@ $mobile-height: 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: $height;
+  height: variables.$navbar-height;
   width: 100%;
   padding: 0 20px;
   font-weight: 100;
@@ -47,11 +44,15 @@ $mobile-height: 40px;
   }
 }
 
+.activeLink {
+    background-color: rgba(variables.$theme-light, 0.3);
+}
+
 .image {
   display: inline-block;
   margin-right: 5px;
   img {
-    height: $height !important;
+    height: variables.$navbar-height !important;
   }
 }
 
@@ -63,7 +64,7 @@ $mobile-height: 40px;
     width: 1.25rem;
 
     span {
-        font-size: $mobile-height;
+        font-size: variables.$navbar-mobile-height;
     }
 }
 
@@ -98,7 +99,7 @@ $mobile-height: 40px;
     gap: 20px;
 
     &.menuOpen {
-        top: calc($mobile-height + 20px);
+        top: calc(variables.$navbar-mobile-height + 20px);
     }
 
     li {
@@ -120,11 +121,11 @@ $mobile-height: 40px;
     }
 
     .image img {
-        height: $mobile-height !important;
+        height: variables.$navbar-mobile-height !important;
     }
 
     .container {
-        height: $mobile-height !important;
+        height: variables.$navbar-mobile-height !important;
     }
 
     .outerContainer {
@@ -138,7 +139,7 @@ $mobile-height: 40px;
 }
 
 li.highlightColor {
-    color: variables.$theme-light;
+    color: variables.$highlight-color;
     &:active {
         color: variables.$foreground-color;
     }

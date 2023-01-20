@@ -1,0 +1,77 @@
+@use '../styles/variables';
+
+@media screen and (max-width: 800px) {
+    .imageContainer {
+        display: none !important;
+    }
+
+    .columnContainer {
+        margin-right: 10px !important;
+        margin-left: 10px !important;
+    }
+
+    .faqsContainer {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+}
+
+
+.container {
+    background-color: variables.$theme-dark;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+    h1 {
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+}
+
+.faqsContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    flex: 7;
+    h2 {
+        margin-bottom: 20px;
+    }
+}
+
+.columnContainer {
+    display: flex;
+    flex-direction: row;
+    background-color: variables.$background-color;
+    margin-left: 40px;
+    margin-right: 120px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px 2px black;
+    margin-top: 40px;
+    padding-bottom: 20px;
+}
+
+.imageContainer {
+    position: relative;
+    left: 30px;
+    flex: 2;
+
+    span {
+        box-shadow: 0 0 15px 0 black !important;
+    }
+
+    img {
+        border: 2px solid variables.$foreground-color !important;
+    }
+}
+
+.image {
+    transform: rotate(5deg);
+    margin-bottom: 60px;
+}
+
+.imageRetrograde {
+    transform: rotate(-5deg);
+}

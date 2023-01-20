@@ -25,9 +25,16 @@ ul {
 }
 
 .material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
+}
+
+.separator-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.separator {
+    width: 100px;
+    height: 0px;
+    border: 2px solid variables.$foreground-color;
 }

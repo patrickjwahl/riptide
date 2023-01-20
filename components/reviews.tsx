@@ -16,8 +16,8 @@ const Reviews = () => {
                         <span className='material-symbols-outlined'>star</span>
                         <span className='material-symbols-outlined'>star</span>
                     </div>
-                    <div className={styles.reviewBody}>"My canine companion, Freddie, was a wild doggo that did not listen to many instructions. After enrolling him at Karma K9, he was trained by Curtis. Curtis did an exceptional job teaching Freddie commands, and he is so much calmer now. I recommend Karma K9 to all my friends, and will definitely bring my future dogs to be trained by Curtis."</div>
-                    <div className={styles.reviewAuthor}>David "Dave" Tassoni</div>
+                    <div className={styles.reviewBody}>"This place is awesome, my dog Beau came out beautifully trained and happy. He came out trained and never lost his happy and energetic personality. Curtis and his team really know what they are doing over there and I absolutely recommend them to everybody I talk to."</div>
+                    <div className={styles.reviewAuthor}>Chase Pivarnik</div>
                 </SwiperSlide>
                 <SwiperSlide className={styles.swiperSlide}>
                     <div className={styles.stars}>
@@ -27,8 +27,8 @@ const Reviews = () => {
                         <span className='material-symbols-outlined'>star</span>
                         <span className='material-symbols-outlined'>star</span>
                     </div>
-                    <div className={styles.reviewBody}>"I absolutely love Karma K9. The staff is super friendly and very knowledgeable. I recommend them to any dog owner! Ask for Curtis, he trained both of my dogs and I couldn't be happier with the results!"</div>
-                    <div className={styles.reviewAuthor}>Megan Gebhardt</div>
+                    <div className={styles.reviewBody}>"Curtis was an amazing trainer! We’re so thankful to find a place that loved our dog as much as we do! And accepts him for his flaws! We couldn’t thank them enough for all they’ve done for us!"</div>
+                    <div className={styles.reviewAuthor}>Dominic Gittens</div>
                 </SwiperSlide>
                 <SwiperSlide className={styles.swiperSlide}>
                     <div className={styles.stars}>
@@ -38,8 +38,8 @@ const Reviews = () => {
                         <span className='material-symbols-outlined'>star</span>
                         <span className='material-symbols-outlined'>star</span>
                     </div>
-                    <div className={styles.reviewBody}>"Had the pleasure of undergoing training sessions with Curtis, and couldn't be happier with the results! He was very friendly and professional, and was so good with my dog. Recommending Karma to everyone I know!"</div>
-                    <div className={styles.reviewAuthor}>Clay Dreier</div>
+                    <div className={styles.reviewBody}>"We took our Belgian Malinois here for training with Curtis who did an amazing job. We feel very comfortable with leaving our puppy while traveling. Not everyone can handle the neurotic behavior of a Malinois but I have peace of mind they are taking the best care of Odin."</div>
+                    <div className={styles.reviewAuthor}>Steven Reid</div>
                 </SwiperSlide>
             </Swiper>
         </div>

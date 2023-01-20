@@ -1,3 +1,18 @@
+@media screen and (max-width: 992px) {
+    .swiper-button-next {
+        padding-left: 40px !important;
+    }
+
+    .swiper-button-prev {
+        padding-right: 40px !important;
+    }
+
+    .swiper-slide {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+}
+
 .swiper-button-prev, .swiper-button-next {
     color: white !important;
 }

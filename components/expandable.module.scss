@@ -1,0 +1,90 @@
+@use '../styles/variables';
+
+@media screen and (max-width: 800px) {
+    .content {
+        width: 90% !important;
+        margin: 0 auto !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    .contentVisible {
+        max-height: 70vh !important;
+    }
+}
+
+.container {
+    width: 100%
+}
+
+.header {
+    width: 100%;
+    display: inline-flex;
+    padding: 15px 20px;
+    font-weight: 500;
+    background-color: variables.$background-color;
+    user-select: none;
+    border-radius: 100px;
+    border: 3px solid variables.$foreground-color;
+    cursor: pointer;
+    position: relative;
+    z-index: 6;
+
+    &:hover {
+        background-color: variables.$theme-light;
+        color: variables.$background-color;
+    }
+
+    &:active {
+        filter: brightness(0.75);
+    }
+}
+
+.headerVisible {
+    background-color: variables.$theme-light;
+    color: variables.$background-color;
+}
+
+.headerText {
+    text-align: left;
+    flex: 1;
+}
+
+.icon {
+    font-size: inherit !important;
+    display: none;
+}
+
+.iconVisible {
+    display: inline;
+}
+
+.content {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out, margin-bottom 0.3s ease-out;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 80px;
+    padding-right: 80px;
+    text-align: left;
+    background-color: variables.$theme-light;
+    color: variables.$background-color;
+    border-width: 2px;
+    border-style: solid;
+    border-top: none;
+    border-color: variables.$foreground-color;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    position: relative;
+    z-index: 4;
+    top: calc(-17px - 0.5em);
+    margin-bottom: 0px;
+}
+
+.contentVisible {
+    padding-top: calc(27px + 0.5em);
+    padding-bottom: 12px;
+    max-height: 40vh;
+    margin-bottom: -20px !important;
+}

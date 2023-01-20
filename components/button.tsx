@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { MouseEventHandler, useState } from 'react';
 import styles from './button.module.scss';
 import cn from 'classnames';
 
@@ -8,12 +8,14 @@ interface Props {
     /** Additional styles */
     style?: { [key: string]: string },
     /** Text for the button */
-    children: string
+    children: string,
+    /** Action to take on click */
+    onClick?: MouseEventHandler<HTMLDivElement>
 }
 
-const Button = ({ isPrimary = false, style = {}, children }: Props) => {
+const Button = ({ isPrimary = false, style = {}, children, onClick = () => {} }: Props) => {
     return (
-        <div className={cn(styles.container, {[styles.primary]: isPrimary})} style={style}>
+        <div onClick={onClick} className={cn(styles.container, {[styles.primary]: isPrimary})} style={style}>
             {children}
         </div>
     );

@@ -1,0 +1,11 @@
+@use '../styles/variables';
+
+.navbarPadding {
+    padding-top: variables.$navbar-total-height;
+}
+
+@media screen and (max-width: 992px) {
+    .navbarPadding {
+        padding-top: variables.$navbar-mobile-total-height;
+    }
+};

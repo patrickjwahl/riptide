@@ -6,22 +6,39 @@
     }
     .mobileHeroContainer {
         display: block !important;
+        width: 100vw;
+        height: calc(60vh + 30vw);
     }
     .banner {
         margin-right: 0 !important;
-        font-size: 4vw !important;
+        font-size: 3.5vh !important;
         width: 75% !important;
-        box-shadow: none !important;
+        p {
+            text-shadow: 0 0 15px black;
+        }
     }
+
+    .reviewContainer {
+        display: block !important;
+    }
+
+    .mobileReviewTitle {
+        display: block !important;
+    }
+
+    .reviewTitle {
+        display: none;
+    }
+
     .mainContainer {
-        position: absolute !important;
-        top: 90% !important;
-        z-index: 1 !important;
+        position: relative !important;
         width: 100%;
     }
     .keyPoints h1 {
-        font-size: 7vw !important;
+        font-size: calc(10px + 3vw) !important;
         transform: none !important;
+        padding-left: 20px;
+        padding-right: 20px;
     }
     .keyPoint {
         transform: none !important;
@@ -45,22 +62,33 @@
         }
         .keyPointsTitle {
             margin: 5px 0;
+            font-size: 20px;
         }
     }
+
+    .moreReviewsButton {
+        margin-top: 0 !important;
+    }
+
     .keyPointsText {
-        font-size: 4vw;
+        font-size: 17px;
     }
     .prompt {
-        font-size: 5vw !important;
+        font-size: 24px !important;
         padding: 0 50px;
     }
     .promptButtons {
         flex-direction: column;
         align-items: center;
-        font-size: 6vw;
+        font-size: 24px;
     }
     .smallText {
-        font-size: 4vw;
+        font-size: 18px;
+    }
+    .programsBox {
+        flex-direction: column !important;
+        align-items: center !important;
+        padding: 0;
     }
 }
 
@@ -73,12 +101,12 @@
 }
 
 .bkgImage {
-    filter: blur(10px);
+    filter: blur(20px) brightness(50%);
     transition: filter 0.5s;
 }
 
 .bkgVisible {
-    filter: none;
+    filter: blur(0) brightness(50%);
 }
 
 .bannerContainer {
@@ -89,33 +117,49 @@
     top: 40%;
     justify-content: flex-end;
     opacity: 0;
-    transform: translateX(50vw);
     transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+}
+
+.mobileReviewTitle {
+    margin-bottom: 0px;
+    display: none;
 }
 
 .mobileBannerContainer {
     width: 100%;
     position: absolute;
-    top: calc(60% - 5vw);
+    top: calc(45vh);
     display: flex;
     justify-content: center;
     opacity: 0;
     transition: opacity 0.6s ease-out;
 }
 
+.mobileBkgImage {
+    filter: brightness(75%);
+    object-fit: cover;
+}
+
 .banner {
     text-align: center;
     font-weight: 500;
-    width: 40vw;
-    font-size: calc(1.5vw + 1em);
-    margin-right: 7vw;
-    background-color: rgba(variables.$theme-dark, 0.75);
-    box-shadow: 0 0 15px 20px rgba(variables.$theme-dark, 0.75);
+    width: 50vw;
+    margin-right: 3vw;
+    background-color: rgba(variables.$background-color, 0.0);
     padding: 30px;
     
     p {
         margin: 0;
+        font-size: calc(1.2vw + 0.4em);
     }
+
+    b {
+        font-size: calc(2vw + 1.2em);
+    } 
+}
+
+.moreReviewsButton {
+    margin-top: 40px;
 }
 
 .heroContainer {
@@ -142,10 +186,9 @@
     text-align: center;
 
     h1 {
-        font-size: 3.4vw;
+        font-size: 3vw;
         font-weight: 600;
         transform: skew(-15deg, 0);
-        padding: 20px 0 10px 0;
     }
 }
 
@@ -185,7 +228,7 @@
 
 .keyPoint {
     opacity: 0;
-    transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+    transition: opacity 0.3s ease-out, transform 0.6s ease-out;
     will-change: opacity;
 }
 
@@ -207,6 +250,43 @@
 }
 
 .reviewContainer {
-    background-color: variables.$background-color;
-    padding: 40px 0;
+    background-color: variables.$theme-dark;
+    padding: 40px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+
+    .reviewTitle {
+        flex: 1;
+    }
+
+    img {
+        width: 100%;
+        border-radius: 20px;
+    }
+}
+
+.reviewImageContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.programsBox {
+    display: flex;
+    padding: 40px;
+    padding-top: 30px;
+    justify-content: center;
+    gap: 40px;
+}
+
+.programsContainer {
+    text-align: center;
+    
+    h1 {
+        margin-top: 30px;
+        margin-bottom: 7px;
+    }
 }

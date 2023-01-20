@@ -1,0 +1,43 @@
+@use '../styles/variables';
+
+@media screen and (max-width: 992px) {
+    .reviewContainer {
+        width: 40vw !important;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .reviewContainer {
+        width: 100% !important;
+        margin-bottom: 20px !important;
+    }
+}
+
+.reviewContainer {
+    width: 32vw;
+    margin: 1vw 1vw;
+    padding: 20px;
+    padding-bottom: 40px;
+    border-radius: 20px;
+    background-color: variables.$background-color;
+    border: 4px solid variables.$foreground-color;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.4s ease-out;
+    scroll-margin-top: 300px;
+
+    &:hover {
+        box-shadow: 0 0 15px 0 black;
+    }
+}
+
+.stars {
+    color: gold;
+    letter-spacing: 1500px;
+    margin-bottom: 10px;
+    font-variation-settings: 'FILL' 1.0;
+}
+
+.isVisible {
+    opacity: 1;
+}

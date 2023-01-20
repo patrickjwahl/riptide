@@ -1,0 +1,151 @@
+@use '../styles/variables';
+
+@media screen and (max-width: 600px) {
+    .columnList {
+        flex-direction: column !important;
+        gap: 0 !important;
+    }
+}
+
+@media screen and (max-width: 992px) {
+
+    .container {
+        form {
+            margin-left: 15px !important;
+            margin-right: 15px !important;
+        }
+    }
+
+    .inputRow {
+        flex-direction: column !important;
+        align-items: center;
+        gap: 10px;
+        width: 100% !important;
+
+        input {
+            width: 100% !important;
+        }
+    }
+
+    .messageContainer {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}
+
+.container {
+    background-color: variables.$foreground-color;
+    color: variables.$background-color;
+    padding-top: 40px;
+    text-align: center;
+    scroll-margin-top: variables.$navbar-height;
+    
+    h1 {
+        margin: 0;
+    }
+
+    input {
+        font-family: inherit !important;
+        padding: 20px;
+        border-radius: 20px;
+        color: variables.$background-color;
+        background-color: variables.$foreground-color;
+        border: 4px solid variables.$background-color;
+        font-size: 16px;
+        width: 300px;
+        margin-left: 10px;
+        margin-right: 10px;
+        transition: border-color 0.3s ease-out;
+
+        &::placeholder {
+            color: variables.$theme-dark;
+        }
+
+        &:focus {
+            outline: none;
+            border-color: variables.$highlight-color;
+        }
+    }
+
+    textarea {
+        font-family: inherit !important;
+        resize: none;
+        width: 100%;
+        margin-top: 20px;
+        border: none;
+        font-size: 16px;
+        padding: 20px;
+        outline: none;
+        background-color: variables.$theme-dark;
+        color: variables.$foreground-color;
+        border-radius: 20px;
+
+        &::placeholder {
+            color: variables.$foreground-color;
+            opacity: 0.7;
+        }
+    }
+
+    form {
+        margin-left: 14vw;
+        margin-right: 14vw;
+    }
+}
+
+.inputRow {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.messageContainer {
+    margin-top: 20px;
+    text-align: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 4px solid variables.$background-color;
+    border-radius: 20px;
+    padding: 20px;
+    
+    h2 {
+        margin: 0;
+        margin-bottom: 10px;
+    }
+}
+
+.columnList {
+    columns: 2;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    ul {
+        margin: 0;
+        padding: 0;
+        li {
+            display: table-row;
+        }
+        li:before {
+            content: "\2713\0020";
+            display: table-cell;
+            padding-right: 3px;
+        }
+    }
+}
+
+.errorText {
+    div {
+        padding-top: 10px;
+    }
+}
+
+.missingField {
+    border: 4px solid red !important;
+}
+
+.hidden {
+    display: none;
+}

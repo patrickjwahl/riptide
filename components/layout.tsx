@@ -1,6 +1,10 @@
 import Navbar from "./navbar";
 import React from "react";
 import { useState, useEffect } from 'react'
+import styles from './layout.module.scss'
+import cn from "classnames";
+import Contact from "./contact";
+import Footer from "./footer";
 
 interface Props {
     children: React.ReactNode,
@@ -15,15 +19,19 @@ const Layout = ({ children, containsHero = false }) => {
 
     const handleScroll = (event) => {
         let scrollTop = window.scrollY;
-        console.log(scrollTop);
         setNavbarTransparent(scrollTop < 200);
     }
 
-    if (containsHero) {
-        useEffect(() => {
+    useEffect(() => {
+        if (containsHero) {
             window.addEventListener('scroll', handleScroll);
-        }, []);
-    }
+            setNavbarTransparent(true);
+            return () => window.removeEventListener('scroll', handleScroll);
+        } else {
+            window.removeEventListener('scroll', handleScroll);
+            setNavbarTransparent(false);
+        }
+    }, [containsHero]);
 
     const toggleDropdown = () => {
         setDropdownOpen(!dropdownOpen);
@@ -32,7 +40,9 @@ const Layout = ({ children, containsHero = false }) => {
     return(
         <>
             <Navbar dropdownOpen={dropdownOpen} toggleDropdown={toggleDropdown} isTransparent={navbarTransparent} />
-            <main onClick={() => {setDropdownOpen(false);}}>{children}</main>
+            <main onClick={() => {setDropdownOpen(false);}} className={cn({[styles.navbarPadding]: !containsHero})}>{children}</main>
+            <Contact />
+            <Footer />
         </>
     )
 }

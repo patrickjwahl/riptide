@@ -4,6 +4,7 @@ import { AppProps } from 'next/app';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import { ReactElement, ReactNode } from 'react';
 import { NextPage } from 'next';
+import Layout from '../components/layout';
 
 type NextPageWithLayout = NextPage & {
     getLayout?: (page: ReactElement) => ReactNode
@@ -15,7 +16,13 @@ type AppPropsWithLayout = AppProps & {
 
 function App({ Component, pageProps }: AppPropsWithLayout) {
 
-    const getLayout = Component.getLayout ?? ((page) => page);
+    const getLayout = Component.getLayout ?? ((page: ReactElement) => {
+        return (
+            <Layout containsHero={false}>
+                {page}
+            </Layout>
+        )
+    });
 
     const ComponentWithLayout = getLayout(<Component {...pageProps} />);
 
