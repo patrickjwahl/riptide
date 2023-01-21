@@ -42,7 +42,7 @@ const About = () => {
                             <div className={styles.checkList}>
                                 <h4>Serviced:</h4>
                                 <ul>
-                                    <li>10 police departments</li>
+                                    <li>11 police departments</li>
                                     <li>US Department of Defense</li>
                                     <li>US Army Rangers</li>
                                     <li>Australian Special Forces</li>
