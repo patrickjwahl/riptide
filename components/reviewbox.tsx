@@ -30,8 +30,8 @@ const ReviewBox = ({author, text, link = null}: Props) => {
     }, [ref, isVisible]);
 
     return (
-        <div ref={ref} className={cn(styles.reviewContainer, {[styles.isVisible]: isVisible})}>
-            <a href={link} target='_blank'>
+        <div ref={ref} className={cn(styles.reviewContainer, {[styles.largeReview]: text.length > 1000, [styles.isVisible]: isVisible})}>
+            <a href={link ? link : null} target='_blank'>
                 <div>
                     <h3>{author}</h3>
                     <div className={styles.stars}>

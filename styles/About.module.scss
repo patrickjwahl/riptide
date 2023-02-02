@@ -2,12 +2,20 @@
 
 @media screen and (max-width: 600px) {
     .pedigreeTitle {
-        font-size: 17px;
+        font-size: 14px;
     }
 
     .pedigreeSection {
         padding-left: 5px !important;
         padding-right: 5px !important;
+
+        &::before {
+            display: none;
+        }
+    }
+
+    .checkList {
+        margin-left: 20px !important;
     }
 }
 
@@ -24,11 +32,25 @@
         display: block !important;
         margin-bottom: 0;
         margin-top: -30px;
+        position: relative;
+        z-index: 20;
 
         span {
-            border: 10px solid variables.$foreground-color !important;
+            border: 10px solid variables.$background-color !important;
             box-shadow: 0 0 15px 0 black;
             transform: rotate(3deg);
+        }
+    }
+
+    .pedigreeSection {
+        &::before {
+            display: none;
+        }
+    }
+
+    .storySection {
+        &::after {
+            display: none;
         }
     }
 }
@@ -63,7 +85,7 @@
 .container {
     display: flex;
     flex-direction: row;
-    background-color: variables.$theme-dark;
+    overflow: hidden;
 }
 
 .mobileImageContainer {
@@ -84,12 +106,14 @@
 }
 
 .imageContainer {
+    position: relative;
+    z-index: 5;
     width: 35vw;    
     position: relative;
     margin-top: 30vh;
     span {
         box-shadow: 0 0 15px 0 black;
-        border: 4px solid white !important;
+        border: 10px solid white !important;
         transform: rotate(-3deg);
 
         img {
@@ -110,6 +134,7 @@
     text-align: center;
     padding: 30px;
     padding-top: 35vh;
+    color: variables.$background-color;
 
     h1 {
         font-size: 48px;
@@ -150,11 +175,11 @@
 }
 
 .pedigreeTitle {
-    background-color: variables.$foreground-color; 
     padding: 10px;
     border-radius: 100px;
-    border: 2px solid variables.$background-color;
+    border: 2px solid variables.$foreground-color;
     margin-bottom: 0px !important;
+    background-color: variables.$background-color;
     margin-top: 0px;
     position: relative;
     z-index: 6;
@@ -164,7 +189,7 @@
     margin-bottom: -2px;
     margin-top: -30px;
     text-align: center;
-    color: variables.$background-color;
+    color: variables.$foreground-color;
     font-size: 30px;
 }
 
@@ -182,12 +207,12 @@
         margin-top: 0 !important;
         margin-bottom: 10px;
     }
-    background-color: variables.$foreground-color;
+    background-color: variables.$background-color;
     border-radius: 20px;
     border-top-right-radius: 0;
     padding-top: 30px;
     padding-left: 20px;
-    border: 2px solid variables.$background-color;
+    border: 2px solid variables.$foreground-color;
 }
 
 .highlightSection {
@@ -198,13 +223,26 @@
 .pedigreeSection {
     display: flex;
     flex-direction: row;
+    position: relative;
 
-    :first-child {
+    h1 {
+        position: relative;
+        z-index: 20;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100vw;
+        left: -50vw;
+        background-color: variables.$theme-dark;
+        top: 0;
     }
 
     >:last-child {
         position: relative;
-        border: 4px solid variables.$foreground-color;
+        border: 10px solid variables.$background-color;
         box-shadow: 0 0 15px 0 black;
         right: -70px;
         top: -10px;
@@ -215,12 +253,10 @@
 }
 
 .sectionContent {
-    background-color: variables.$theme-light;
-    color: variables.$background-color;
+    background-color: variables.$theme-dark;
     padding: 20px;
     margin-bottom: 30px;
     border-radius: 10px;
-    box-shadow: 0 0 15px 0px black;
 
     h1 {
         margin: 0;
@@ -251,6 +287,21 @@
 .storySection {
     display: flex;
     flex-direction: row;
+    position: relative;
+
+    div {
+        z-index: 10;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100vw;
+        left: -50vw;
+        background-color: variables.$theme-dark;
+        top: 0;
+    }
 }
 
 .storyText {
@@ -262,6 +313,7 @@
     right: -50px;
     top: -30px;
     height: 100% !important;
+    width: 500%;
     display: flex;
     gap: 100px;
     flex-direction: column;
@@ -272,9 +324,9 @@
     }
 
     img {
-        border-color: variables.$foreground-color !important;
+        border-color: variables.$background-color !important;
         border-style: solid !important;
-        border-width: 4px !important;
+        border-width: 10px !important;
     }
 }
 

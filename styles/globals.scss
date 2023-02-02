@@ -4,7 +4,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background-color: variables.$background-color;
   color: variables.$foreground-color;
   overflow-x: hidden !important;
@@ -34,6 +34,12 @@ ul {
 }
 
 .separator {
+    width: 100px;
+    height: 0px;
+    border: 2px solid variables.$background-color;
+}
+
+.separator-dark {
     width: 100px;
     height: 0px;
     border: 2px solid variables.$foreground-color;

@@ -1,12 +1,12 @@
 @use '../styles/variables';
 
 $hover-bkg-color: variables.$theme-light;
-$hover-color: variables.$background-color;
+$hover-color: variables.$foreground-color;
 
 $primary-color: variables.$foreground-color;
 $primary-bkg-color: variables.$highlight-color;
 $primary-hover-bkg-color: variables.$theme-light;
-$primary-hover-color: variables.$background-color;
+$primary-hover-color: variables.$foreground-color;
 
 @mixin background-properties {
     background-size: 0 0;

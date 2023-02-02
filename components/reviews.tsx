@@ -16,6 +16,17 @@ const Reviews = () => {
                         <span className='material-symbols-outlined'>star</span>
                         <span className='material-symbols-outlined'>star</span>
                     </div>
+                    <div className={styles.reviewBody}>"Both of our dogs absolutely thrived under the care & training of Curtis. The first round of photos we received without a doubt relieved every concern we had - it’s hard to be concerned when your pup is smiling in his photo! Our boys have learned how to maintain their manners even when excitement takes over, they are able to take walks that are truly enjoyable for them ... We have had company on several occasions since they have returned home & people just cannot believe the difference. Curtis trained our dogs and did so well beyond our expectations ... There is a healthy communication between our dogs & us now, game changing ... If you’re looking for someone who is going to love your dogs just like his own while they’re in his care - Curtis is it."</div>
+                    <div className={styles.reviewAuthor}>Lindsay Lyon</div>
+                </SwiperSlide>
+                <SwiperSlide className={styles.swiperSlide}>
+                    <div className={styles.stars}>
+                        <span className='material-symbols-outlined'>star</span>
+                        <span className='material-symbols-outlined'>star</span>
+                        <span className='material-symbols-outlined'>star</span>
+                        <span className='material-symbols-outlined'>star</span>
+                        <span className='material-symbols-outlined'>star</span>
+                    </div>
                     <div className={styles.reviewBody}>"This place is awesome, my dog Beau came out beautifully trained and happy. He came out trained and never lost his happy and energetic personality. Curtis and his team really know what they are doing over there and I absolutely recommend them to everybody I talk to."</div>
                     <div className={styles.reviewAuthor}>Chase Pivarnik</div>
                 </SwiperSlide>

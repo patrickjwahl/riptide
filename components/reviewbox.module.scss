@@ -18,17 +18,22 @@
     margin: 1vw 1vw;
     padding: 20px;
     padding-bottom: 40px;
-    border-radius: 20px;
-    background-color: variables.$background-color;
-    border: 4px solid variables.$foreground-color;
+    border-radius: 10px;
+    background-color: variables.$theme-light;
     cursor: pointer;
     opacity: 0;
     transition: opacity 0.4s ease-out;
     scroll-margin-top: 300px;
+    position: relative;
+    z-index: 20;
 
     &:hover {
-        box-shadow: 0 0 15px 0 black;
+        background-color: variables.$theme-dark;
     }
+}
+
+.largeReview {
+    width: 66vw;
 }
 
 .stars {

@@ -5,6 +5,12 @@
         padding-left: 5vw !important;
         padding-right: 5vw !important;
     }
+
+    .container {
+        &::after {
+            display: none;
+        }
+    }
 }
 
 @media screen and (max-width: 700px) {
@@ -16,13 +22,30 @@
 
 
 .container {
-    background-color: variables.$theme-dark;
     padding-top: 40px;
     padding-bottom: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
     text-align: center;
+    position: relative;
+    z-index: 20;
+    overflow: hidden;
     h1 {
         margin-top: 0;
         margin-bottom: 10px;
+    }
+
+    &::after {
+        content: '';
+        bottom: -30px;
+        left: -150px;
+        position: absolute;
+        width: 540px;
+        height: 543px;
+        transform: rotate(-35deg);
+        background-image: url('../public/img/resized/malinois3.png');
+        background-position: center;
+        background-size: contain;
     }
 }
 

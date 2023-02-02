@@ -2,8 +2,9 @@ import Image from "next/image";
 import styles from '../styles/FAQ.module.scss';
 import cn from 'classnames';
 import Expandable from "../components/expandable";
-import img1 from '../public/img/program1.jpg';
-import img2 from '../public/img/cutie.jpg';
+import img1 from '../public/img/resized/program1.jpeg';
+import img2 from '../public/img/resized/cutie.jpeg';
+import Head from "next/head";
 
 const FAQ = () => {
 
@@ -48,10 +49,13 @@ const FAQ = () => {
 
     return (
     <>
+        <Head>
+            <title>FAQ | Caravan K9</title>
+        </Head>
         <div className={styles.container}>
             <h1>FREQUENTLY ASKED QUESTIONS</h1>
             <div className='separator-container'>
-                <div className='separator' />
+                <div className='separator-dark' />
             </div>
             <div className={styles.columnContainer}>
                 <div className={styles.faqsContainer}>

@@ -20,11 +20,14 @@
 .header {
     width: 100%;
     display: inline-flex;
+    flex-direction: row;
+    align-items: center;
     padding: 15px 20px;
     font-weight: 500;
     background-color: variables.$background-color;
     user-select: none;
-    border-radius: 100px;
+    border-radius: 10px;
+    gap: 20px;
     border: 3px solid variables.$foreground-color;
     cursor: pointer;
     position: relative;
@@ -32,17 +35,19 @@
 
     &:hover {
         background-color: variables.$theme-light;
-        color: variables.$background-color;
     }
 
     &:active {
         filter: brightness(0.75);
     }
+
+    >span:not(:first-child) {
+        font-size: 24px !important;
+    }
 }
 
 .headerVisible {
-    background-color: variables.$theme-light;
-    color: variables.$background-color;
+
 }
 
 .headerText {
@@ -68,14 +73,13 @@
     padding-left: 80px;
     padding-right: 80px;
     text-align: left;
-    background-color: variables.$theme-light;
-    color: variables.$background-color;
-    border-width: 2px;
+    background-color: variables.$background-color;
+    border-width: 3px;
     border-style: solid;
     border-top: none;
     border-color: variables.$foreground-color;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     position: relative;
     z-index: 4;
     top: calc(-17px - 0.5em);

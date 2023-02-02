@@ -1,15 +1,20 @@
 @use '../styles/variables';
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 700px) {
     .swiperSlide {
-        padding-left: calc(20px + 12vw) !important;
-        padding-right: calc(20px + 12vw) !important;
+        padding-left: calc(12vw) !important;
+        padding-right: calc(12vw) !important;
     }
+    
+    .swiper {
+        height: 800px !important;
+    }
+
 }
 
 .swiper {
     width: 50vw;
-    height: 300px;
+    height: 400px;
     background-color: variables.$background-color;
     border-radius: 50px;
     outline: 4px solid variables.$foreground-color;

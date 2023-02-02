@@ -1,7 +1,6 @@
 import styles from '../styles/Testimonials.module.scss';
-import cn from 'classnames';
-import Link from 'next/link';
 import ReviewBox from '../components/reviewbox';
+import Head from 'next/head';
 
 const Testimonials = () => {
 
@@ -37,6 +36,11 @@ const Testimonials = () => {
             link: 'https://goo.gl/maps/QETSLs8QEK5SfEaE9'
         },
         {
+            author: 'Lindsay Lyon',
+            text: "My husband & I have two male Great Danes- 5 & 2 years old. The biggest issues we saw were jumping, barking, horrible walking, and sadly growling from my anxiety filled doggo anytime my husband would get near me. Everyone in our life loves our boys and aggression with others was never an issue- but having large breed dogs means they do need to be on their best behavior, their size alone can make the most innocent behaviors feel intimidating to those who visit our home or those we may encounter out in public. I finally realized that we couldn’t fix these issues on our own & that’s how I found Curtis. With every intention of only sending our youngest, we met with Curtis & left there to go home and grab our old man as well. I always believed beings he was 5 that he was untrainable- but Curtis assured us old dogs can in fact learn new tricks! Board and train is hard enough but felt even harder beings my velcro dog would struggle with being away from me. Or so I thought at least! Both of our dogs absolutely thrived under the care & training of Curtis. The first round of photos we received without a doubt relieved every concern we had- it’s hard to be concerned when your pup is smiling in his photo! Our boys have learned how to maintain their manners even when excitement takes over, they are able to take walks that are truly enjoyable for them & us, and most importantly- my husband and my velcro dog have been able to build their own bond & it seems they actually kind of like one another now 😉 And the self confidence these dogs build through training really lessens the anxieties they have! We have had company on several occasions since they have returned home & people just cannot believe the difference. Curtis trained our dogs and did so well beyond our expectations but that was not his toughest challenge… the real challenge was training my husband & I. Worth every single penny- we have zero regrets. There is a healthy communication between our dogs & us now, game changing. We still do follow up training so he can make sure we’re doing everything right and when we pull up the boys get so excited- that tells me there was absolutely nothing traumatic about this experience for them! If you’re looking for someone who is going to love your dogs just like his own while they’re in his care- Curtis is it. 🙂",
+            link: ''
+        },
+        {
             author: 'Blaire, Lindsay, CeCe',
             text: "The whole experience in bringing our dog Quinn to KarmaK9 has been life changing. We didn’t know what to do anymore since she had been aggressive to our other dog several times. After meeting with Curtis, who spent the better part of 2 hours, asking questions about Quinn, her experiences, maybe why she was the way she was, and just explaining how he and Karma could help, I knew we were in the right spot. \n\n We did the 4 week board and train. Was it cheap, no, was it worth it, my wife and I would have paid double. Curtis sent us 2 updates a week with pics and progress of how Quinn was coming along. Finally after 4 weeks we came to get her. The difference is night and day. She is the same lovable sweet dog, but now she can handle stressful situations without lashing out at our other dog. Curtis helped with her, but as important worked with us to make sure what he taught her we can implement at home. Training us is prob harder than training Quinn, but the post sessions and the contact we’ve had are very helpful. \n\nIt is great to have the support and education that Karma has provided to Quinn and our family and we know going forward that we literally have a new 'Leash' on life.",
             link: 'https://goo.gl/maps/K1MqvKFf1tWboHLfA'
@@ -55,10 +59,13 @@ const Testimonials = () => {
 
     return (
     <>
+        <Head>
+            <title>Testimonials | Caravan K9</title>
+        </Head>
         <div className={styles.container}>
             <h1>TESTIMONIALS</h1>
             <div className='separator-container'>
-                <div className='separator' />
+                <div className='separator-dark' />
             </div>
             <h3>See what people are saying about my previous work at Karma K9!</h3>
             <div className={styles.bodyContainer}>

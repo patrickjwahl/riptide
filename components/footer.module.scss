@@ -1,15 +1,11 @@
 @use '../styles/variables';
 
-@media screen and (max-width: 992px) {
-
-}
-
 .container {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 20px 0;
+    padding: 20px 40px;
     text-align: center;
     gap: 50px;
 
@@ -22,5 +18,12 @@
 .logoBox {
     img {
         max-width: 100px !important;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .container {
+        flex-direction: column;
+        gap: 20px;
     }
 }

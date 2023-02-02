@@ -1,15 +1,16 @@
 import Image from "next/image";
 import styles from '../styles/About.module.scss';
-import mainImage from '../public/img/curtis-dennis-bw.jpg';
-import mainImage2 from '../public/img/curt3.jpeg';
-import mainImage3 from '../public/img/curt4.jpeg';
+import mainImage from '../public/img/resized/curtis-dennis-bw.jpeg';
+import mainImage2 from '../public/img/resized/curt3.jpeg';
+import mainImage3 from '../public/img/resized/curt4.jpeg';
 import cn from 'classnames';
-import pedigreeImage from '../public/img/groot2.jpg';
-import storyImage from '../public/img/story.jpg';
-import ffcImage from '../public/img/curt2.jpeg';
-import bavanaImage from '../public/img/bavana.jpg';
+import pedigreeImage from '../public/img/resized/groot2.jpeg';
+import storyImage from '../public/img/resized/story.jpeg';
+import ffcImage from '../public/img/resized/curt2.jpeg';
 import { useParallax } from "react-scroll-parallax";
-import curtDogsImage from '../public/img/about-page.jpg';
+import curtDogsImage from '../public/img/resized/about-page.jpeg';
+import curtDogsImageSquare from '../public/img/resized/about-page-2.jpeg';
+import Head from "next/head";
 
 const About = () => {
 
@@ -17,6 +18,9 @@ const About = () => {
 
     return (
     <>
+        <Head>
+                <title>About | Caravan K9</title>
+        </Head>
         <div className={styles.container}>
             <div className={styles.imageContainer}>
                 <div ref={parallaxRef as React.RefObject<HTMLDivElement>}>
@@ -27,7 +31,7 @@ const About = () => {
                     </div>
                     <div className={styles.imageText}>
                         <div>
-                            <h2>EXPERIENCE | EXPERTISE | DOG LOVE</h2>
+                            <h2>EXPERIENCE | EXPERTISE</h2>
                             <h1>CARAVAN K9</h1>
                         </div>
                     </div>
@@ -66,7 +70,7 @@ const About = () => {
                     <div className={styles.mobileImageContainer}>
                         <Image src={pedigreeImage} />
                     </div>
-                    <div className={cn(styles.sectionContent, styles.highlightSection, styles.storySection)}>
+                    <div className={cn(styles.sectionContent, styles.highlightSection)}>
                         <div className={styles.storyText}>
                             <h1>My Philosophy</h1>
                             <p>The training philosophy at Riptide K9 stems from tried and true applications of behavioral science and psychology. Animal intelligence is nothing to scoff at; dogs are capable of much more complex tasks than we give them credit for, and the path to getting there is incredibly important. </p>
@@ -88,7 +92,7 @@ const About = () => {
                         </div>
                         <div className={styles.storyImageContainer}>
                             <div className={styles.storyImage}>
-                                <Image src={bavanaImage} />
+                                <Image src={curtDogsImageSquare} />
                             </div>
                             <div className={styles.storyImage2}>
                                 <Image src={storyImage} />

@@ -1,17 +1,78 @@
 @use '../styles/variables';
 
+$hover-bkg-color: variables.$theme-light;
+$hover-color: variables.$foreground-color;
+
+@mixin background-properties {
+    background-size: 0 0;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 .outerContainer {
   position: fixed;
   width: 100%;
   z-index: 100;
   padding-top: 10px;
   padding-bottom: 10px;
-  transition: background-color 0.3s ease-out, border-bottom 0.3s ease-out;
+  top: 0;
+  transition: background-color 0.3s ease-out;
+  .headerLink {
+      color: variables.$background-color;
+      transition: color 0.3s ease-out;
+  }
+
+  .button {
+    border: 1px solid;
+    border-radius: 0.3vw;
+    padding: 0.5vw 1.5vw;
+    display: inline-block;
+    cursor: pointer;
+    background-color: transparent;
+    user-select: none;
+    color: variables.$background-color;
+    border-color: variables.$background-color;
+
+    @include background-properties;
+    background-image: radial-gradient($hover-bkg-color 0%, $hover-bkg-color 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 100%);
+    transition: background-size 0.4s ease-out, color 0.3s, border-color 0.3s;
+
+    &:hover {
+        background-size: 1000px 1000px;
+        border-color: $hover-bkg-color;
+        color: $hover-color
+    }
+
+    &:active {
+        filter: brightness(0.75);
+    }
+  }
 }
 
 .solidBackground {
     background-color: variables.$background-color;
-    border-bottom: 2px solid variables.$foreground-color;
+    box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.5);
+    .headerLink {
+        color: variables.$foreground-color;
+    }
+
+    .button {
+        color: variables.$foreground-color;
+        border-color: variables.$foreground-color;
+    }
+
+    li {
+        &:hover {
+            background-color: rgba(variables.$foreground-color, 0.3) !important;
+            &.navButton {
+                background: none;
+            }
+        }
+    }
+}
+
+.noShadow {
+    box-shadow: none;
 }
 
 .container {
@@ -21,18 +82,18 @@
   height: variables.$navbar-height;
   width: 100%;
   padding: 0 20px;
-  font-weight: 100;
+  font-weight: 300;
 
   li {
     display: inline-block;
-    margin-left: 4vw;
+    margin-left: 2.3vw;
     cursor: pointer;
     padding: 10px;
     border-radius: 5px;
     user-select: none;
 
     &:hover {
-        background-color: rgba(variables.$foreground-color, 0.3);
+        background-color: rgba(variables.$background-color, 0.3);
         &.navButton {
             background: none;
         }
@@ -45,14 +106,17 @@
 }
 
 .activeLink {
-    background-color: rgba(variables.$theme-light, 0.3);
+    background-color: rgba(variables.$theme-light, 0.7);
 }
 
 .image {
   display: inline-block;
   margin-right: 5px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
   img {
-    height: variables.$navbar-height !important;
+    height: calc(variables.$navbar-height + 29px) !important;
   }
 }
 
@@ -86,17 +150,21 @@
     position: fixed;
     z-index: 99;
     width: 100%;
+    height: 100%;
     padding: 20px;
     text-align: center;
     font-weight: 300;
     font-size: 30px;
     margin: 0;
-    top: -600px;
+    top: -100%;
     transition: top 0.5s ease-out;
-    border-bottom: 2px solid variables.$foreground-color;
     display: none;
     flex-direction: column;
+    justify-content: center;
+    margin-top: calc(-1 * variables.$navbar-mobile-total-height);
+    box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.5);
     gap: 20px;
+    touch-action: none;
 
     &.menuOpen {
         top: calc(variables.$navbar-mobile-height + 20px);
@@ -120,8 +188,12 @@
         display: flex !important;
     }
 
-    .image img {
-        height: variables.$navbar-mobile-height !important;
+    .image {
+        left: 0;
+
+        img {
+            height: calc(variables.$navbar-mobile-height + 20px) !important;
+        }
     }
 
     .container {
@@ -130,7 +202,7 @@
 
     .outerContainer {
         background-color: variables.$background-color;
-        border-bottom: 2px solid variables.$foreground-color;
+        box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.5);
     }
 
     .dropdownMenu {

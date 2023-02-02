@@ -8,6 +8,10 @@
     .columnContainer {
         margin-right: 10px !important;
         margin-left: 10px !important;
+
+        &::before {
+            display: none;
+        }
     }
 
     .faqsContainer {
@@ -18,7 +22,6 @@
 
 
 .container {
-    background-color: variables.$theme-dark;
     padding-top: 40px;
     padding-bottom: 40px;
     text-align: center;
@@ -44,13 +47,22 @@
 .columnContainer {
     display: flex;
     flex-direction: row;
-    background-color: variables.$background-color;
+    background-color: variables.$theme-dark;
     margin-left: 40px;
     margin-right: 120px;
-    border-radius: 10px;
-    box-shadow: 0 0 30px 2px black;
+    border-radius: 5px;
     margin-top: 40px;
     padding-bottom: 20px;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 400px;
+        height: 100%;
+        left: -200px;
+        background-color: variables.$theme-dark;
+    }
 }
 
 .imageContainer {
@@ -63,7 +75,7 @@
     }
 
     img {
-        border: 2px solid variables.$foreground-color !important;
+        border: 10px solid variables.$background-color !important;
     }
 }
 

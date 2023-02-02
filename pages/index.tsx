@@ -1,22 +1,22 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.scss'
-import Button from '../components/button'
-import Reviews from '../components/reviews'
-import Image from 'next/image'
-import backgroundImage from '../public/img/hero2.jpeg'
-import backgroundImageMobile from '../public/img/mobilebkg.jpg'
-import programImage1 from '../public/img/boardtrain2.jpeg';
-import programImage2 from '../public/img/program2.jpg'
-import programImage3 from '../public/img/jump.jpg'
-import reviewsImage from '../public/img/den-attila.jpg';
-import reviewsImage2 from '../public/img/den-attila-2.jpg';
-import { useParallax } from 'react-scroll-parallax'
-import cn from 'classnames'
-import { useState, useRef, useEffect } from 'react'
-import Layout from '../components/layout'
-import { ReactElement } from 'react'
-import FlipCard from '../components/flipcard'
-import Link from 'next/link'
+import Head from 'next/head';
+import styles from '../styles/Home.module.scss';
+import Button from '../components/button';
+import Reviews from '../components/reviews';
+import Image from 'next/image';
+import backgroundImage from '../public/img/resized/hero2.jpeg';
+import backgroundImageMobile from '../public/img/resized/boardtrain_portrait.jpeg';
+import programImage1 from '../public/img/resized/boardtrain2.jpeg';
+import programImage2 from '../public/img/resized/program2.jpeg'
+import programImage3 from '../public/img/resized/jump.jpeg'
+import reviewsImage from '../public/img/resized/den-attila.jpeg';
+import reviewsImage2 from '../public/img/resized/den-attila-2.jpeg';
+import { useParallax } from 'react-scroll-parallax';
+import cn from 'classnames';
+import { useState, useRef, useEffect } from 'react';
+import Layout from '../components/layout';
+import { ReactElement } from 'react';
+import FlipCard from '../components/flipcard';
+import Link from 'next/link';
 
 const Home = () => {
     const { ref: parallaxRef } = useParallax({speed: -100});
@@ -44,15 +44,15 @@ const Home = () => {
     return (
         <div style={{overflowX: 'hidden'}}>
             <Head>
-                <title>Caravan K9 | Jacksonville's 2nd Best Dog Trainers</title>
+                <title>Caravan K9 | Expert Dog Training in Jacksonville and Ponte Vedra</title>
             </Head>
             <div ref={parallaxRef as React.RefObject<HTMLDivElement>} className={styles.heroContainer}>
                 <Image src={backgroundImage} layout="responsive" alt="doggie" className={cn(styles.bkgImage, {[styles.bkgVisible]: bannerVisible})} />
                 <div className={cn(styles.bannerContainer, {[styles.isVisible]: bannerVisible})}>
                     <div className={styles.banner}>
                         <p>GIVE YOUR DOG THE GIFT OF</p>
-                        <p><b>UNDERSTANDING</b></p>
-                        <Link href='#contact-form'><a><Button isPrimary={true} style={{fontSize: '1.6vw', fontWeight: '300', marginTop: '20px'}}>SCHEDULE A FREE CONSULTATION</Button></a></Link>
+                        <p><b>COMMUNICATION</b></p>
+                        <Link href='#contact-form'><a><Button isPrimary={true} style={{fontSize: '1.6vw', fontWeight: '500', marginTop: '20px'}}>SCHEDULE A FREE CONSULTATION</Button></a></Link>
                     </div>
                 </div>
             </div>
@@ -61,19 +61,19 @@ const Home = () => {
                 <div className={cn(styles.mobileBannerContainer, {[styles.isVisible]: bannerVisible})}>
                     <div className={styles.banner}>
                         <p>GIVE YOUR DOG THE GIFT OF</p>
-                        <p><b>UNDERSTANDING</b></p>
-                        <Link href='#contact-form'><a><Button isPrimary={true} style={{fontSize: '28px', fontWeight: '300', marginTop: '20px', boxShadow: '0 0 30px 0 black'}}>GET A FREE CONSULTATION</Button></a></Link>
+                        <p><b>COMMUNICATION</b></p>
+                        <Link href='#contact-form'><a><Button isPrimary={true} style={{fontSize: '18px', fontWeight: '300', marginTop: '20px', boxShadow: '0 0 30px 0 black'}}>GET A FREE CONSULTATION</Button></a></Link>
                     </div>
                 </div>
             </div>
             <div className={styles.mainContainer}>
                 <div className={styles.keyPoints}>
-                    <h1>JACKSONVILLE'S MOST SKILLED DOG TRAINER</h1>
+                    <h1>JACKSONVILLE'S TOP DOG TRAINER</h1>
                     <ul className={styles.keyPointsList} ref={keyPointsRef}>
                         <li className={cn(styles.keyPoint, styles.left, {[styles.isVisible]: keyPointsVisible})}>
                             <span className="material-symbols-outlined">psychology</span>
                             <div className={styles.keyPointsTitle}>PSYCHOLOGY</div>
-                            <div className={styles.keyPointsText}>There's nothing old-fasioned about Riptide. I leverage up-to-date behavioral science to give your dog efficient training that will last. Not only that, I teach you the psychology behind canine cognition so you can maintain your dog's good behavior for their whole life.</div>
+                            <div className={styles.keyPointsText}>There's nothing old-fasioned about Caravan. I leverage up-to-date behavioral science to give your dog efficient training that will last. Not only that, I teach you the psychology behind canine cognition so you can maintain your dog's good behavior for their whole life.</div>
                         </li>
                         <li className={cn(styles.keyPoint, styles.middle, {[styles.isVisible]: keyPointsVisible})}>
                             <span className="material-symbols-outlined">school</span>
@@ -114,19 +114,19 @@ const Home = () => {
                         <div className='separator'/>
                     </div>
                     <div className={styles.programsBox}>
-                        <FlipCard image={programImage1} frontText="BOARD & TRAIN" backText={
+                        <FlipCard image={programImage1} link='/programs#board' frontText="BOARD & TRAIN" backText={
                             'Board and Trains are the most successful way to get results quickly with your dog. They will stay in a relaxing home environment with 24/7 care, giving both you and your pup the stress free experience you are looking for! Whether you need help with some bad manners or your dog has more complex behavioral issues, this program will be tailored directly for you and your life.'
                         } />
-                        <FlipCard image={programImage3} frontText="PRIVATE LESSONS" backText={
+                        <FlipCard image={programImage3} link='/programs#private' frontText="PRIVATE LESSONS" backText={
                             'Work one-on-one with me at my home, your home, or out in public.  \
                             We will build a training plan catered to you and your dog\'s behavioral needs no matter how complex the issue.'
                         } />
-                        <FlipCard image={programImage2} frontText="PUPPY SKILLS" backText={
+                        <FlipCard image={programImage2} link='/programs#puppy' frontText="PUPPY SKILLS" backText={
                             'Dog training can be a struggle for you and your pooch. Don\'t let the puppy blues affect your dog\'s behavior. \
                             Come learn how to shape your dog\'s foundation of communication and develop an engaging relationship that sets you up for the future.'
                         } />
                     </div>
-                    <Link href='/programs'><a><Button>LEARN MORE</Button></a></Link>
+                    <Link href='/programs'><a><Button>VIEW ALL PROGRAMS</Button></a></Link>
                 </div>
             </div>
         </div>

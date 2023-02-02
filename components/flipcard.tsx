@@ -2,15 +2,18 @@ import { StaticImageData } from 'next/image'
 import styles from './flipcard.module.scss'
 import { useState, useEffect } from 'react'
 import cn from 'classnames'
+import Button from './button'
+import Link from 'next/link'
 
 interface Props {
     /** Content for front and back sides of the flip card */
     image: StaticImageData,
-    frontText: string
-    backText: string
+    frontText: string,
+    backText: string,
+    link?: string
 }
 
-const FlipCard = ({ image, frontText, backText }: Props) => {
+const FlipCard = ({ image, frontText, backText, link = null }: Props) => {
 
     const [isClicked, setIsClicked] = useState<boolean>(false);
 
@@ -48,6 +51,9 @@ const FlipCard = ({ image, frontText, backText }: Props) => {
                         {frontText}
                     </div>
                     {backText}
+                    {link ? (
+                        <Link href={link}><a><Button>LEARN MORE</Button></a></Link>
+                    ) : (null)}
                 </div>
             </div>
         </div>

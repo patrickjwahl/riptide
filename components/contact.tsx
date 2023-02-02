@@ -102,12 +102,12 @@ const Contact = () => {
 
     return (
         <div id="contact-form" className={styles.container}>
-            <h1>Ready to get in touch?</h1>
+            <h1>Ready to hop on the Caravan?</h1>
             <form>
                 <div className={styles.inputRow}>
                     <input className={cn({[styles.missingField]: nameMissing})} name='name' placeholder='Full Name' value={name} onChange={e => setName(e.target.value)} />
                     <input className={cn({[styles.missingField]: emailInvalid || emailMissing})} name='email' placeholder='Email' value={email} onChange={e => setEmail(e.target.value)} />
-                    <input name='phone' placeholder='Phone Number' value={phone} onChange={e => setPhone(e.target.value)} />
+                    <input type='tel' name='phone' placeholder='Phone Number' value={phone} onChange={e => setPhone(e.target.value)} />
                 </div>
                 <div className={styles.messageContainer}>
                     <h2>Message</h2>
@@ -135,10 +135,10 @@ const Contact = () => {
                     <div className={cn({[styles.hidden]: !(nameMissing || emailMissing || messageMissing)})}>Missing {getMissingString()}!</div>
                     <div className={cn({[styles.hidden]: !emailInvalid})}>Invalid email address!</div>
                 </div>
-                <Button onClick={submitForm} isPrimary={true} style={{margin: '20px', fontSize: '24px', display: isSubmitting || isFinished ? 'none' : 'inline-block'}}>SEND MESSAGE!</Button>
+                <Button onClick={submitForm} isPrimary={true} style={{margin: '20px', fontSize: '24px', display: isSubmitting || isFinished ? 'none' : 'inline-block'}}>SEND!</Button>
                 <ClipLoader loading={isSubmitting} color='#f26838' cssOverride={{margin: '20px'}} />
-                <div style={{padding: '20px', color: 'darkgreen', display: isFinished ? 'block' : 'none'}}>&#x2713; Your message was sent!</div>
-                <div style={{paddingBottom: '20px', color: 'darkred', display: isError ? 'block' : 'none'}}>Uh oh... something went wrong. Please try again.</div>
+                <div style={{padding: '20px', display: isFinished ? 'block' : 'none'}}>&#x2713; Your message was sent!</div>
+                <div style={{paddingBottom: '20px', color: 'red', display: isError ? 'block' : 'none'}}>Uh oh... something went wrong. Please try again.</div>
             </form>
         </div>
     );

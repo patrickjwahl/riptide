@@ -1,5 +1,5 @@
 import styles from './footer.module.scss';
-import logoImage from '../public/img/main-logo-crop.png'
+import logoImage from '../public/img/resized/logo.png';
 import Image from 'next/image';
 
 const Footer = () => {
@@ -9,12 +9,11 @@ const Footer = () => {
                 <Image src={logoImage} />
             </div>
             <div>
-                <h3>Riptide K9</h3>
-                <div>JACKSONVILLE'S BEST MALE DOG TRAINER</div>
+                <h3>CARAVAN K9</h3>
+                <div>Proudly serving Duval and St. Johns Counties, Florida</div>
             </div>
             <div className={styles.infoBox}>
-                <div>Hours</div>
-                <div>24/7, bitch? What you think this is?</div>
+                <div>&copy; 2023 Caravan K9</div>
             </div>
         </div>
     )
