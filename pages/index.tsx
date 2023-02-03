@@ -18,6 +18,8 @@ import { ReactElement } from 'react';
 import FlipCard from '../components/flipcard';
 import Link from 'next/link';
 
+const bannerWords = ['COMMUNICATION', 'CONFIDENCE', 'FULFILLMENT', 'UNDERSTANDING', 'FUN'];
+
 const Home = () => {
     const { ref: parallaxRef } = useParallax({speed: -100});
 
@@ -25,6 +27,16 @@ const Home = () => {
     const keyPointsRef = useRef(null);
 
     const [ bannerVisible, setBannerVisible ] = useState<boolean>(false);
+    const [ bannerTextVisible, setBannerTextVisible ] = useState<boolean>(true);
+    const [ bannerIndex, setBannerIndex ] = useState<number>(0);
+
+    const transitionBanner = () => {
+        setBannerTextVisible(false);
+        setTimeout(() => {
+            setBannerIndex(bannerIndex < bannerWords.length - 1 ? bannerIndex + 1 : 0);
+            setBannerTextVisible(true);
+        }, 700);
+    };
 
     useEffect(() => {
         const { innerWidth: viewportWidth } = window;
@@ -41,34 +53,39 @@ const Home = () => {
         setBannerVisible(true);
     }, [bannerVisible]);
 
+    useEffect(() => {
+        setTimeout(transitionBanner, 4000);
+    }, [bannerIndex]);
+
     return (
         <div style={{overflowX: 'hidden'}}>
             <Head>
                 <title>Caravan K9 | Expert Dog Training in Jacksonville and Ponte Vedra</title>
             </Head>
             <div ref={parallaxRef as React.RefObject<HTMLDivElement>} className={styles.heroContainer}>
-                <Image src={backgroundImage} layout="responsive" alt="doggie" className={cn(styles.bkgImage, {[styles.bkgVisible]: bannerVisible})} />
+                <Image src={backgroundImage} priority layout="responsive" alt="doggie" className={cn(styles.bkgImage, {[styles.bkgVisible]: bannerVisible})} />
                 <div className={cn(styles.bannerContainer, {[styles.isVisible]: bannerVisible})}>
                     <div className={styles.banner}>
                         <p>GIVE YOUR DOG THE GIFT OF</p>
-                        <p><b>COMMUNICATION</b></p>
+                        <p className={cn(styles.bannerWord, {[styles.visible]: bannerTextVisible})}><b>{bannerWords[bannerIndex]}</b></p>
                         <Link href='#contact-form'><a><Button isPrimary={true} style={{fontSize: '1.6vw', fontWeight: '500', marginTop: '20px'}}>SCHEDULE A FREE CONSULTATION</Button></a></Link>
                     </div>
                 </div>
             </div>
             <div className={styles.mobileHeroContainer}>
-                <Image src={backgroundImageMobile} layout="fill" alt="doggie" className={styles.mobileBkgImage} />
+                <Image src={backgroundImageMobile} priority layout="fill" alt="doggie" className={styles.mobileBkgImage} />
                 <div className={cn(styles.mobileBannerContainer, {[styles.isVisible]: bannerVisible})}>
                     <div className={styles.banner}>
                         <p>GIVE YOUR DOG THE GIFT OF</p>
-                        <p><b>COMMUNICATION</b></p>
+                        <p className={cn(styles.bannerWord, {[styles.visible]: bannerTextVisible})}><b>{bannerWords[bannerIndex]}</b></p>
                         <Link href='#contact-form'><a><Button isPrimary={true} style={{fontSize: '18px', fontWeight: '300', marginTop: '20px', boxShadow: '0 0 30px 0 black'}}>GET A FREE CONSULTATION</Button></a></Link>
                     </div>
                 </div>
             </div>
             <div className={styles.mainContainer}>
                 <div className={styles.keyPoints}>
-                    <h1>JACKSONVILLE'S TOP DOG TRAINER</h1>
+                    <h1>CARAVAN K9</h1>
+                    <h2>JACKSONVILLE'S TOP DOG TRAINER</h2>
                     <ul className={styles.keyPointsList} ref={keyPointsRef}>
                         <li className={cn(styles.keyPoint, styles.left, {[styles.isVisible]: keyPointsVisible})}>
                             <span className="material-symbols-outlined">psychology</span>

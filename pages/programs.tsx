@@ -77,7 +77,7 @@ const Programs = () => {
         <div className={styles.container}>
             <div className={styles.heroContainer}>
                 <div className={styles.heroImage} ref={parallaxRef as React.RefObject<HTMLDivElement>}>
-                    <Image src={hero} />
+                    <Image priority src={hero} />
                     <div className={cn(styles.heroBanner, {[styles.bannerVisible]: bannerVisible})}>
                     <div className={styles.hero}>
                         <h1>OUR PROGRAMS</h1>
@@ -242,12 +242,12 @@ const Programs = () => {
                             <li>Manners</li>
                             <li>Crate Training</li>
                             <li>Socialization</li>
-                            <li>Reactivity</li>
                         </ul>
                         <h4>Forgotten:</h4>
                         <ul className={cn(styles.checkList, styles.badList)}>
                             <li>Anxiety</li>
                             <li>Aggression</li>
+                            <li>Reactivity</li>
                         </ul>
                     </div>
                     <div className={styles.heroTablet}>
@@ -255,7 +255,6 @@ const Programs = () => {
                         <h4>Learned:</h4>
                         <ul className={styles.checkList}>
                             <li>On/Off Leash</li>
-                            <li>Sit</li>
                             <li>Sit Stay</li>
                             <li>Down Stay</li>
                             <li>Heel</li>
