@@ -90,7 +90,7 @@ const Home = () => {
                         <li className={cn(styles.keyPoint, styles.left, {[styles.isVisible]: keyPointsVisible})}>
                             <span className="material-symbols-outlined">psychology</span>
                             <div className={styles.keyPointsTitle}>PSYCHOLOGY</div>
-                            <div className={styles.keyPointsText}>There's nothing old-fasioned about Caravan. I leverage up-to-date behavioral science to give your dog efficient training that will last. Not only that, I teach you the psychology behind canine cognition so you can maintain your dog's good behavior for their whole life.</div>
+                            <div className={styles.keyPointsText}>There's nothing old-fashioned about Caravan. I leverage up-to-date behavioral science to give your dog efficient training that will last. Not only that, I teach you the psychology behind canine cognition so you can maintain your dog's good behavior for their whole life.</div>
                         </li>
                         <li className={cn(styles.keyPoint, styles.middle, {[styles.isVisible]: keyPointsVisible})}>
                             <span className="material-symbols-outlined">school</span>

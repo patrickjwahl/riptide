@@ -251,7 +251,7 @@ const Programs = () => {
                         </ul>
                     </div>
                     <div className={styles.heroTablet}>
-                        <h2>Commands</h2>
+                        <h2>Commands</h2>       
                         <h4>Learned:</h4>
                         <ul className={styles.checkList}>
                             <li>On/Off Leash</li>
