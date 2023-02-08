@@ -33,8 +33,11 @@
 }
 
 @media screen and (max-width: 992px) {
+    .logoBox {
+        margin-bottom: -30px;
+    }
     .container {
         flex-direction: column;
-        gap: 20px;
+        gap: 40px;
     }
 }

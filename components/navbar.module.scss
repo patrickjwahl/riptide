@@ -212,10 +212,10 @@ $hover-color: variables.$foreground-color;
     }
 
     .image {
-        left: 0;
+        left: -5px;
 
         img {
-            height: calc(variables.$navbar-mobile-height + 20px) !important;
+            height: calc(variables.$navbar-mobile-height + 45px) !important;
         }
     }
 
