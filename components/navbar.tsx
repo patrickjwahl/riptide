@@ -1,6 +1,6 @@
 import styles from './navbar.module.scss';
 import Image from 'next/image';
-import logoImage from '../public/img/resized/logo.png';
+import logoImage from '../public/img/resized/logo-outline.png';
 import cn from 'classnames';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -36,9 +36,11 @@ const Navbar = ({ isTransparent = false, dropdownOpen, toggleDropdown, ...otherP
                     <Link href="/programs"><a className={styles.headerLink}><li className={router.pathname == '/programs' ? styles.activeLink : ''}>PROGRAMS</li></a></Link>
                     <Link href="/testimonials"><a className={styles.headerLink}><li className={router.pathname == '/testimonials' ? styles.activeLink : ''}>TESTIMONIALS</li></a></Link>
                     <Link href="/faq"><a className={styles.headerLink}><li className={router.pathname == '/faq' ? styles.activeLink : ''}>FAQ</li></a></Link>
-                    <Link href="#contact-form"><a><li className={styles.navButton}>
+                    <div className={styles.contactContainer}><Link href="#contact-form"><a><li className={styles.navButton}>
                         <div className={styles.button}>SCHEDULE A CONSULTATION</div>
                     </li></a></Link>
+                        <div className={styles.email}><a href='mailto:curtis@caravank9.com' target="_blank">curtis@caravank9.com</a></div>
+                    </div>
                 </ul>
                 <div className={styles.dropdownButton} onClick={toggleDropdown}>
                     <span className={cn('material-symbols-outlined', styles.dropdownIcon, {[styles.activeIcon]: !dropdownOpen})}>menu</span>

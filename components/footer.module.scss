@@ -16,8 +16,19 @@
 }
 
 .logoBox {
+    padding-top: 10px;
     img {
-        max-width: 100px !important;
+        max-width: 150px !important;
+    }
+}
+
+.emailLink {
+    font-size: 14px;
+    margin-top: 10px;
+    a {
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }
 

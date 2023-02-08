@@ -52,7 +52,7 @@ $hover-color: variables.$foreground-color;
 .solidBackground {
     background-color: variables.$background-color;
     box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.5);
-    .headerLink {
+    .headerLink, .email {
         color: variables.$foreground-color;
     }
 
@@ -71,8 +71,31 @@ $hover-color: variables.$foreground-color;
     }
 }
 
+.linksList {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.email {
+    text-align: center;
+    margin-top: 5px;
+    font-size: 14px;
+    color: variables.$background-color;
+    transition: all 0.3s ease-out;
+    margin-left: 2.3vw;
+
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
 .noShadow {
     box-shadow: none;
+}
+
+.contactContainer {
+    display: inline-block;
 }
 
 .container {
@@ -113,10 +136,10 @@ $hover-color: variables.$foreground-color;
   display: inline-block;
   margin-right: 5px;
   position: absolute;
-  top: 10px;
+  top: -3px;
   left: 10px;
   img {
-    height: calc(variables.$navbar-height + 29px) !important;
+    height: calc(variables.$navbar-height + 65px) !important;
   }
 }
 
