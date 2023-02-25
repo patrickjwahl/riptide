@@ -31,9 +31,9 @@ const ReviewBox = ({author, text, link = null}: Props) => {
 
     return (
         <div ref={ref} className={cn(styles.reviewContainer, {[styles.largeReview]: text.length > 1000, [styles.isVisible]: isVisible})}>
-            <a href={link ? link : null} target='_blank'>
+            {/* <a href={link ? link : null} target='_blank'> */}
                 <div>
-                    <h3>{author}</h3>
+                    {/* <h3>{author}</h3> */}
                     <div className={styles.stars}>
                         <span className='material-symbols-outlined'>star</span>
                         <span className='material-symbols-outlined'>star</span>
@@ -43,7 +43,7 @@ const ReviewBox = ({author, text, link = null}: Props) => {
                     </div>
                     <div>{text}</div>
                 </div>
-            </a>
+            {/* </a> */}
         </div>
     )
 };

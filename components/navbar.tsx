@@ -27,7 +27,7 @@ const Navbar = ({ isTransparent = false, dropdownOpen, toggleDropdown, ...otherP
                 <Link href="/">
                     <a>
                         <div onClick={() => {if (dropdownOpen) toggleDropdown()}} className={cn(styles.image, styles.logo)}>
-                            <Image src={logoImage} alt="logo" />
+                            <Image src={logoImage} priority alt="logo" />
                         </div>
                     </a>
                 </Link>
