@@ -115,8 +115,8 @@ const Home = () => {
                     <div className={styles.reviewTitle}>
                         <h1>DON'T TAKE MY WORD FOR IT...</h1>
                         <div className={styles.reviewImageContainer}>
-                            <Image src={reviewsImage} />
-                            <Image src={reviewsImage2} />
+                            <Image src={reviewsImage} alt="Doggies playing" />
+                            <Image src={reviewsImage2} alt="More doggies playing" />
                         </div>
                         <h1 style={{textAlign: 'right'}}>...SEE WHAT OTHERS ARE SAYING!</h1>
                     </div>
