@@ -161,6 +161,7 @@ $hover-color: variables.$foreground-color;
     user-select: none;
     transition: transform 0.5s, opacity 0.5s;
     position: absolute;
+    font-size: 30px;
 
     &.activeIcon {
         transform: none;

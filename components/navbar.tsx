@@ -4,6 +4,7 @@ import logoImage from '../public/img/resized/logo-outline.png';
 import cn from 'classnames';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { MdMenu, MdClose } from 'react-icons/md';
 
 interface Props {
     /** Should background be transparent? */
@@ -43,8 +44,8 @@ const Navbar = ({ isTransparent = false, dropdownOpen, toggleDropdown, ...otherP
                     </div>
                 </ul>
                 <div className={styles.dropdownButton} onClick={toggleDropdown}>
-                    <span className={cn('material-symbols-outlined', styles.dropdownIcon, {[styles.activeIcon]: !dropdownOpen})}>menu</span>
-                    <span className={cn('material-symbols-outlined', styles.dropdownIcon, {[styles.activeIcon]: dropdownOpen})}>close</span>
+                    <MdMenu className={cn(styles.dropdownIcon, {[styles.activeIcon]: !dropdownOpen})} />
+                    <MdClose className={cn(styles.dropdownIcon, {[styles.activeIcon]: dropdownOpen})} />
                 </div>
             </div>
         </div>

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styles from './expandable.module.scss';
 import cn from 'classnames';
+import { MdExpandMore, MdExpandLess } from 'react-icons/md';
 
 interface Props {
     /** Header text */
@@ -25,8 +26,8 @@ const Expandable = ({ header, content, style={}, ...otherProps }: Props) => {
         <div className={styles.container} style={style}>
             <div className={cn(styles.header, {[styles.headerVisible]: isOpen})} onClick={toggleIsOpen}>
                 <span className={styles.headerText}>{header}</span>
-                <span className={cn('material-symbols-outlined', styles.icon, {[styles.iconVisible]: !isOpen})}>expand_more</span>
-                <span className={cn('material-symbols-outlined', styles.icon, {[styles.iconVisible]: isOpen})}>expand_less</span>
+                <MdExpandMore className={cn(styles.icon, {[styles.iconVisible]: !isOpen})} />
+                <MdExpandLess className={cn(styles.icon, {[styles.iconVisible]: isOpen})} />
             </div>
             <div className={cn(styles.content, {[styles.contentVisible]: isOpen})}>
                 {content}

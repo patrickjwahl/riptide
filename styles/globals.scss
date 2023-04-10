@@ -8,6 +8,7 @@ body {
   background-color: variables.$background-color;
   color: variables.$foreground-color;
   overflow-x: hidden !important;
+  line-height: 1.4;
 }
 
 a {
@@ -22,9 +23,6 @@ ul {
 
 * {
   box-sizing: border-box;
-}
-
-.material-symbols-outlined {
 }
 
 .separator-container {

@@ -17,6 +17,7 @@ import Layout from '../components/layout';
 import { ReactElement } from 'react';
 import FlipCard from '../components/flipcard';
 import Link from 'next/link';
+import { MdOutlinePsychology, MdOutlineSchool, MdOutlineHouse } from 'react-icons/md';
 
 const bannerWords = ['COMMUNICATION', 'CONFIDENCE', 'FULFILLMENT', 'UNDERSTANDING', 'FUN'];
 
@@ -88,17 +89,17 @@ const Home = () => {
                     <h2>JACKSONVILLE'S TOP DOG TRAINER</h2>
                     <ul className={styles.keyPointsList} ref={keyPointsRef}>
                         <li className={cn(styles.keyPoint, styles.left, {[styles.isVisible]: keyPointsVisible})}>
-                            <span className="material-symbols-outlined">psychology</span>
+                            <MdOutlinePsychology style={{fontSize: '40px'}}/>
                             <div className={styles.keyPointsTitle}>PSYCHOLOGY</div>
                             <div className={styles.keyPointsText}>There's nothing old-fashioned about Caravan. I leverage up-to-date behavioral science to give your dog efficient training that will last. Not only that, I teach you the psychology behind canine cognition so you can maintain your dog's good behavior for their whole life.</div>
                         </li>
                         <li className={cn(styles.keyPoint, styles.middle, {[styles.isVisible]: keyPointsVisible})}>
-                            <span className="material-symbols-outlined">school</span>
+                            <MdOutlineSchool style={{fontSize: '40px'}} />
                             <div className={styles.keyPointsTitle}>EXPERIENCE</div>
                             <div className={styles.keyPointsText}>I've spent years with top-level trainers in both the police and civilian sectors. Having worked with temperaments from all across the canine spectrum, I can help you develop a stress-free and fulfilling line of communication built to set your dog up for success forever.</div>
                         </li>
                         <li className={cn(styles.keyPoint, styles.right, {[styles.isVisible]: keyPointsVisible})}>
-                            <span className="material-symbols-outlined">house</span>
+                            <MdOutlineHouse style={{fontSize: '40px'}} />
                             <div className={styles.keyPointsTitle}>COMFORT</div>
                             <div className={styles.keyPointsText}>Train in the comfort of a home environment rather than the stress of a facility. Practical results stem from a calm home environment that builds confidence for the real world.</div>
                         </li>

@@ -1,6 +1,7 @@
 import styles from './reviewbox.module.scss';
 import cn from 'classnames';
 import { useEffect, useRef, useState } from 'react';
+import { MdStarRate } from 'react-icons/md';
 
 interface Props {
     /** Author name */
@@ -35,11 +36,11 @@ const ReviewBox = ({author, text, link = null}: Props) => {
                 <div>
                     {/* <h3>{author}</h3> */}
                     <div className={styles.stars}>
-                        <span className='material-symbols-outlined'>star</span>
-                        <span className='material-symbols-outlined'>star</span>
-                        <span className='material-symbols-outlined'>star</span>
-                        <span className='material-symbols-outlined'>star</span>
-                        <span className='material-symbols-outlined'>star</span>
+                        <MdStarRate style={{fontSize: '24px'}}/>
+                        <MdStarRate style={{fontSize: '24px'}}/>
+                        <MdStarRate style={{fontSize: '24px'}}/>
+                        <MdStarRate style={{fontSize: '24px'}}/>
+                        <MdStarRate style={{fontSize: '24px'}}/>
                     </div>
                     <div>{text}</div>
                 </div>
