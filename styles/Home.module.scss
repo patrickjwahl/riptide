@@ -94,6 +94,9 @@
 @media screen and (max-width: 700px) {
     .heroContainer {
         display: none;
+        img {
+            display: none;
+        }
     }
     .mobileHeroContainer {
         display: block !important;
