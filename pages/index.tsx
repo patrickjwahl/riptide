@@ -64,7 +64,7 @@ const Home = () => {
                 <title>Caravan K9 | Expert Dog Training in Jacksonville and Ponte Vedra</title>
             </Head>
             <div ref={parallaxRef as React.RefObject<HTMLDivElement>} className={styles.heroContainer}>
-                <Image src={backgroundImage} priority layout="responsive" alt="doggie" className={cn(styles.bkgImage, {[styles.bkgVisible]: bannerVisible})} />
+                <Image src={backgroundImage} priority sizes='100vw' layout="responsive" alt="doggie" className={cn(styles.bkgImage, {[styles.bkgVisible]: bannerVisible})} />
                 <div className={cn(styles.bannerContainer, {[styles.isVisible]: bannerVisible})}>
                     <div className={styles.banner}>
                         <p>GIVE YOUR DOG THE GIFT OF</p>
@@ -74,7 +74,7 @@ const Home = () => {
                 </div>
             </div>
             <div className={styles.mobileHeroContainer}>
-                <Image src={backgroundImageMobile} priority layout="fill" alt="doggie" className={styles.mobileBkgImage} />
+                <Image src={backgroundImageMobile} priority sizes='100vw' layout="fill" alt="doggie" className={styles.mobileBkgImage} />
                 <div className={cn(styles.mobileBannerContainer, {[styles.isVisible]: bannerVisible})}>
                     <div className={styles.banner}>
                         <p>GIVE YOUR DOG THE GIFT OF</p>

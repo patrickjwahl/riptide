@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <div className={styles.container}>
             <div className={styles.logoBox}>
-                <Image src={logoImage} />
+                <Image src={logoImage} alt="Caravan K9 logo" />
             </div>
             <div>
                 <h3>CARAVAN K9</h3>
