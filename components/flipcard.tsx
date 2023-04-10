@@ -1,4 +1,4 @@
-import { StaticImageData } from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import styles from './flipcard.module.scss'
 import { useState, useEffect } from 'react'
 import cn from 'classnames'
@@ -41,7 +41,10 @@ const FlipCard = ({ image, frontText, backText, link = null }: Props) => {
     return (
         <div className={cn(styles.flipCard, {[styles.flipped]: isClicked})} onClick={handleClicked}>
             <div className={styles.flipCardInner}>
-                <div className={styles.flipCardFront} style={{backgroundImage: `url(${image.src})`}}>
+                <div className={styles.flipCardFront}>
+                    <div className={styles.imageContainer}>
+                        <Image src={image} alt={`${frontText} image`} layout='fill' sizes='(max-width: 992px) 33vw, 95vw' />
+                    </div>
                     <div className={styles.frontText}>
                         {frontText}
                     </div>
@@ -52,7 +55,7 @@ const FlipCard = ({ image, frontText, backText, link = null }: Props) => {
                     </div>
                     {backText}
                     {link ? (
-                        <Link href={link}><a><Button>LEARN MORE</Button></a></Link>
+                        <Link href={link}><a><Button>{`MORE ABOUT ${frontText}`}</Button></a></Link>
                     ) : (null)}
                 </div>
             </div>
