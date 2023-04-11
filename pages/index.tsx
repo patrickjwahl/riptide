@@ -18,6 +18,7 @@ import { ReactElement } from 'react';
 import FlipCard from '../components/flipcard';
 import Link from 'next/link';
 import { MdOutlinePsychology, MdOutlineSchool, MdOutlineHouse } from 'react-icons/md';
+import useMatchMedia from '../lib/useMatchMedia';
 
 const bannerWords = ['COMMUNICATION', 'CONFIDENCE', 'FULFILLMENT', 'UNDERSTANDING', 'FUN'];
 
@@ -30,6 +31,8 @@ const Home = () => {
     const [ bannerVisible, setBannerVisible ] = useState<boolean>(false);
     const [ bannerTextVisible, setBannerTextVisible ] = useState<boolean>(true);
     const [ bannerIndex, setBannerIndex ] = useState<number>(0);
+
+    const isMobileResolution = useMatchMedia('(max-width:700px)', true);
 
     const transitionBanner = () => {
         setBannerTextVisible(false);
@@ -64,7 +67,7 @@ const Home = () => {
                 <title>Caravan K9 | Expert Dog Training in Jacksonville and Ponte Vedra</title>
             </Head>
             <div className={styles.mobileHeroContainer}>
-                <Image src={backgroundImageMobile} priority sizes='100vw' layout="fill" alt="Mobile hero image" className={styles.mobileBkgImage} />
+                {isMobileResolution && <Image src={backgroundImageMobile} priority sizes='100vw' layout="fill" alt="Mobile hero image" className={styles.mobileBkgImage} />}
                 <div className={cn(styles.mobileBannerContainer, {[styles.isVisible]: bannerVisible})}>
                     <div className={styles.banner}>
                         <p>GIVE YOUR DOG THE GIFT OF</p>
@@ -74,7 +77,7 @@ const Home = () => {
                 </div>
             </div>
             <div ref={parallaxRef as React.RefObject<HTMLDivElement>} className={styles.heroContainer}>
-                <Image src={backgroundImage} priority sizes='100vw' layout="responsive" alt="Hero image" className={cn(styles.bkgImage, {[styles.bkgVisible]: bannerVisible})} />
+                {!isMobileResolution && <Image src={backgroundImage} priority sizes='100vw' layout="responsive" alt="Hero image" className={cn(styles.bkgImage, {[styles.bkgVisible]: bannerVisible})} />}
                 <div className={cn(styles.bannerContainer, {[styles.isVisible]: bannerVisible})}>
                     <div className={styles.banner}>
                         <p>GIVE YOUR DOG THE GIFT OF</p>
