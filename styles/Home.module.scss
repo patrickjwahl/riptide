@@ -200,6 +200,11 @@
     top: calc(-1 * (450px - 20vw));
 }
 
+.heroImageContainer {
+    width: 100vw;
+    height: calc(100vw * 0.550521);
+}
+
 .mobileHeroContainer {
     display: none;
 }

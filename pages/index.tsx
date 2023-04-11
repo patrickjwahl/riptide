@@ -77,7 +77,9 @@ const Home = () => {
                 </div>
             </div>
             <div ref={parallaxRef as React.RefObject<HTMLDivElement>} className={styles.heroContainer}>
-                {!isMobileResolution && <Image src={backgroundImage} priority sizes='100vw' layout="responsive" alt="Hero image" className={cn(styles.bkgImage, {[styles.bkgVisible]: bannerVisible})} />}
+                <div className={styles.heroImageContainer}>
+                    {!isMobileResolution && <Image src={backgroundImage} priority sizes='100vw' layout="fill" alt="Hero image" className={cn(styles.bkgImage, {[styles.bkgVisible]: bannerVisible})} />}
+                </div>
                 <div className={cn(styles.bannerContainer, {[styles.isVisible]: bannerVisible})}>
                     <div className={styles.banner}>
                         <p>GIVE YOUR DOG THE GIFT OF</p>
