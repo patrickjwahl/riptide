@@ -63,16 +63,6 @@ const Home = () => {
             <Head>
                 <title>Caravan K9 | Expert Dog Training in Jacksonville and Ponte Vedra</title>
             </Head>
-            <div ref={parallaxRef as React.RefObject<HTMLDivElement>} className={styles.heroContainer}>
-                <Image src={backgroundImage} priority sizes='100vw' layout="responsive" alt="doggie" className={cn(styles.bkgImage, {[styles.bkgVisible]: bannerVisible})} />
-                <div className={cn(styles.bannerContainer, {[styles.isVisible]: bannerVisible})}>
-                    <div className={styles.banner}>
-                        <p>GIVE YOUR DOG THE GIFT OF</p>
-                        <p className={cn(styles.bannerWord, {[styles.visible]: bannerTextVisible})}><b>{bannerWords[bannerIndex]}</b></p>
-                        <Link href='#contact-form'><a><Button isPrimary={true} style={{fontSize: '1.6vw', fontWeight: '500', marginTop: '20px'}}>SCHEDULE A FREE CONSULTATION</Button></a></Link>
-                    </div>
-                </div>
-            </div>
             <div className={styles.mobileHeroContainer}>
                 <Image src={backgroundImageMobile} priority sizes='100vw' layout="fill" alt="doggie" className={styles.mobileBkgImage} />
                 <div className={cn(styles.mobileBannerContainer, {[styles.isVisible]: bannerVisible})}>
@@ -80,6 +70,16 @@ const Home = () => {
                         <p>GIVE YOUR DOG THE GIFT OF</p>
                         <p className={cn(styles.bannerWord, {[styles.visible]: bannerTextVisible})}><b>{bannerWords[bannerIndex]}</b></p>
                         <Link href='#contact-form'><a><Button isPrimary={true} style={{fontSize: '18px', fontWeight: '300', marginTop: '20px', boxShadow: '0 0 30px 0 black'}}>GET A FREE CONSULTATION</Button></a></Link>
+                    </div>
+                </div>
+            </div>
+            <div ref={parallaxRef as React.RefObject<HTMLDivElement>} className={styles.heroContainer}>
+                <Image src={backgroundImage} priority sizes='100vw' layout="responsive" alt="doggie" className={cn(styles.bkgImage, {[styles.bkgVisible]: bannerVisible})} />
+                <div className={cn(styles.bannerContainer, {[styles.isVisible]: bannerVisible})}>
+                    <div className={styles.banner}>
+                        <p>GIVE YOUR DOG THE GIFT OF</p>
+                        <p className={cn(styles.bannerWord, {[styles.visible]: bannerTextVisible})}><b>{bannerWords[bannerIndex]}</b></p>
+                        <Link href='#contact-form'><a><Button isPrimary={true} style={{fontSize: '1.6vw', fontWeight: '500', marginTop: '20px'}}>SCHEDULE A FREE CONSULTATION</Button></a></Link>
                     </div>
                 </div>
             </div>
