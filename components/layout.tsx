@@ -5,6 +5,7 @@ import styles from './layout.module.scss'
 import cn from "classnames";
 import Contact from "./contact";
 import Footer from "./footer";
+import CallButton from "./callbutton";
 
 interface Props {
     children: React.ReactNode,
@@ -43,6 +44,7 @@ const Layout = ({ children, containsHero = false }) => {
             <main onClick={() => {setDropdownOpen(false);}} className={cn({[styles.navbarPadding]: !containsHero})}>{children}</main>
             <Contact />
             <Footer />
+            <CallButton />
         </>
     )
 }

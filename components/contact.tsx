@@ -114,18 +114,14 @@ const Contact = () => {
                     <div>Please include the following:</div>
                     <div className={styles.columnList}>
                         <ul>
-                            <li>dog breed</li>
-                            <li>age</li>
-                            <li>problems you are having</li>
-                            <li>your training goals</li>
-                            <li>whether the dog is aggressive or not</li>
+                            <li>family, other pets, primary caregiver</li>
+                            <li>dog's info</li>
+                            <li>daily routine</li>
                         </ul>
                         <ul>
-                            <li>any health issues</li>
-                            <li>details on current vaccination records</li>
-                            <li>how many dogs in the house</li>
-                            <li>how many dogs you're interested in having trained/boarded</li>
-                            <li>best time to contact you</li>
+                            <li>medical history</li>
+                            <li>nutrition</li>
+                            <li>problems you've encountered</li>
                         </ul>
                     </div>
                     <div>Also please be advised all dogs must be current and up to date regarding shots when it comes to being boarded and trained with us.</div>
