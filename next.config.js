@@ -8,7 +8,6 @@ module.exports = {
     includePaths: [path.join(__dirname, 'styles')],
   },
   images: {
-    loader: 'akamai',
-    path: '/'
+    domains: ['images.ctfassets.net']
   }
 }
