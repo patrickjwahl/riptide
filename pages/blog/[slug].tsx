@@ -25,6 +25,7 @@ const Post = ({ post }: { post: Post }) => {
                 </div>
                 <div className={styles.nonHeroContainer}>
                     <div className={styles.heroTextMobile}>
+                        <a href='/blog'>← Back to Blog</a>
                         <h1>{post.title}</h1>
                         <div><i>{new Date(post.createdAt).toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})}</i></div>
                     </div>

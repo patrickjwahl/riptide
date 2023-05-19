@@ -83,7 +83,7 @@ export async function getStaticProps(context) {
     }
 
     posts = posts.sort((a, b) => {
-        return -1 * (Date.parse(a.sys.createdAt) - Date.parse(b.sys.createdAt));
+        return -1 * (Date.parse(a.createdAt) - Date.parse(b.createdAt));
     });
 
     return { props: { posts }};

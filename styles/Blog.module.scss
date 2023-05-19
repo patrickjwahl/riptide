@@ -53,6 +53,10 @@
         &:hover {
             color: variables.$theme-dark;
         }
+
+        &:last-child {
+            text-decoration: underline;
+        }
     }
 }
 
@@ -88,6 +92,7 @@
 
         img {
             object-fit: cover;
+            filter: brightness(50%);
         }
     }
 
@@ -99,6 +104,7 @@
         h1 {
             font-size: 48px;
             text-align: center;
+            padding: 0 100px;
         }
 
         div {
@@ -132,6 +138,13 @@
 
         .heroTextMobile {
             display: block;
+            text-align: left;
+
+            padding-top: 20px;
+
+            a {
+                text-decoration: underline;
+            }
         }
 
         .bodyContainer {

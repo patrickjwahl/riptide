@@ -25,7 +25,7 @@ const CallButton = () => {
     return (
         <div className={styles.container}>
             <a href='tel:4015249805'><button><MdPhoneEnabled /></button></a>
-            <div className={cn({[styles.visible]: textVisible})}>Call us with any questions!</div>
+            <div className={cn({[styles.visible]: textVisible})}>Any questions? Call us!</div>
         </div>
     );
 }
