@@ -130,6 +130,10 @@
         .heroContainer {
             height: 300px;
             margin-top: variables.$navbar-mobile-total-height;
+            
+            img { 
+                filter: none;
+            }
         }
 
         .heroText {
