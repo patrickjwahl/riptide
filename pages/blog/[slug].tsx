@@ -5,6 +5,7 @@ import { ReactElement } from 'react';
 import Layout from '../../components/layout';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { BlogPostSkeleton } from '.';
+import Head from 'next/head';
 
 interface Post {
     title: string,
@@ -15,6 +16,10 @@ interface Post {
 
 const Post = ({ post }: { post: Post }) => {
     return (
+        <>
+            <Head>
+                <title>{post.title} | Blog | Caravan K9</title>
+            </Head>
             <div className={styles.postContainer}>
                 <div className={styles.heroContainer}>
                     <Image src={post.imageUrl} layout='fill' alt="Hero image" />
@@ -32,6 +37,7 @@ const Post = ({ post }: { post: Post }) => {
                     <div className={styles.bodyContainer} dangerouslySetInnerHTML={{__html: post.content}}></div>
                 </div>
             </div>
+        </>
     );
 };
 
