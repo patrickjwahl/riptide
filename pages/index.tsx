@@ -64,7 +64,7 @@ const Home = () => {
     return (
         <div style={{overflowX: 'hidden'}}>
             <Head>
-                <title>Caravan K9 | Expert Dog Training in Jacksonville and Ponte Vedra</title>
+                <title>Caravan K9 | Expert Dog Training in Jacksonville and Ponte Vedra, FL</title>
             </Head>
             <div className={styles.mobileHeroContainer}>
                 {isMobileResolution && <Image src={backgroundImageMobile} priority sizes='100vw' layout="fill" alt="Mobile hero image" className={styles.mobileBkgImage} />}
