@@ -186,11 +186,13 @@
 }
 
 .pedigreeConnector {
-    margin-bottom: -2px;
+    margin-bottom: -5px;
     margin-top: -30px;
     text-align: center;
     color: variables.$foreground-color;
     font-size: 30px;
+    position: relative;
+    z-index: 5000;
 }
 
 .checkList {

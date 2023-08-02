@@ -42,6 +42,14 @@ const About = () => {
                     <div className={cn(styles.sectionContent, styles.pedigreeSection)}>
                         <div>
                             <h1 style={{marginBottom: '15px'}}>My Pedigree</h1>
+                            <h3 className={styles.pedigreeTitle}>Karma K9, Jacksonville FL</h3>
+                            <div className={styles.checkList}>
+                                <h4>Training Director</h4>
+                                <ul>
+                                    <li>Serviced 200+ clients</li>
+                                </ul>
+                            </div>
+                            <div className={styles.pedigreeConnector}>|</div>
                             <h3 className={styles.pedigreeTitle}>Tarheel Canine Training, Sanford NC</h3>
                             <div className={styles.checkList}>
                                 <h4>Serviced:</h4>
@@ -52,14 +60,6 @@ const About = () => {
                                     <li>Australian Special Forces</li>
                                     <li>Indian Special Forces</li>
                                     <li>Personal Protection Dogs</li>
-                                </ul>
-                            </div>
-                            <div className={styles.pedigreeConnector}>|</div>
-                            <h3 className={styles.pedigreeTitle}>Karma K9, Jacksonville FL</h3>
-                            <div className={styles.checkList}>
-                                <h4>Serviced:</h4>
-                                <ul>
-                                    <li>200+ clients</li>
                                 </ul>
                             </div>
                         </div>

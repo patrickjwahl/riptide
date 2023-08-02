@@ -36,6 +36,7 @@ const Navbar = ({ isTransparent = false, dropdownOpen, toggleDropdown, ...otherP
                     <Link href="/about"><a className={styles.headerLink}><li className={router.pathname == '/about' ? styles.activeLink : ''}>ABOUT</li></a></Link>
                     <Link href="/programs"><a className={styles.headerLink}><li className={router.pathname == '/programs' ? styles.activeLink : ''}>PROGRAMS</li></a></Link>
                     <Link href="/testimonials"><a className={styles.headerLink}><li className={router.pathname == '/testimonials' ? styles.activeLink : ''}>TESTIMONIALS</li></a></Link>
+                    <Link href="/faq"><a className={styles.headerLink}><li className={router.pathname.startsWith('/faq') ? styles.activeLink : ''}>FAQ</li></a></Link>
                     <Link href="/blog"><a className={styles.headerLink}><li className={router.pathname.startsWith('/blog') ? styles.activeLink : ''}>BLOG</li></a></Link>
                     <div className={styles.contactContainer}><Link href="#contact-form"><a><li className={styles.navButton}>
                         <div className={styles.button}>SCHEDULE A CONSULTATION</div>
@@ -53,6 +54,7 @@ const Navbar = ({ isTransparent = false, dropdownOpen, toggleDropdown, ...otherP
             <li onClick={toggleDropdown}><Link href="/about"><a>ABOUT</a></Link></li>
             <li onClick={toggleDropdown}><Link href="/programs"><a>PROGRAMS</a></Link></li>
             <li onClick={toggleDropdown}><Link href="/testimonials"><a>TESTIMONIALS</a></Link></li>
+            <li onClick={toggleDropdown}><Link href="/faq"><a>FAQ</a></Link></li>
             <li onClick={toggleDropdown}><Link href="/blog"><a>BLOG</a></Link></li>
             <li className={styles.highlightColor} onClick={toggleDropdown}><Link href="#contact-form"><a>SCHEDULE A CONSULTATION</a></Link></li>
         </ul>
