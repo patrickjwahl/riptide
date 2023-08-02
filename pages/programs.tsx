@@ -115,7 +115,7 @@ const Programs = () => {
                     <h1>OUR PROGRAMS</h1>
                 </div>
                 <div className='separator-container'>
-                    <div className='separator-dark'/>
+                    <div className='separator'/>
                 </div>
                 <div className={styles.programList}>
                     <div>

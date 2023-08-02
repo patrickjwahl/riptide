@@ -45,6 +45,7 @@
 }
 
 .columnContainer {
+    color: variables.$background-color;
     display: flex;
     flex-direction: row;
     background-color: variables.$theme-dark;

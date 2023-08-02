@@ -60,7 +60,7 @@
         transition: border-color 0.3s ease-out;
 
         &::placeholder {
-            color: variables.$theme-dark;
+            color: variables.$theme-light;
         }
 
         &:focus {
@@ -78,12 +78,12 @@
         font-size: 16px;
         padding: 20px;
         outline: none;
-        background-color: variables.$theme-dark;
+        background-color: variables.$theme-light;
         color: variables.$foreground-color;
         border-radius: 20px;
 
         &::placeholder {
-            color: variables.$foreground-color;
+            color: variables.$theme-dark;
             opacity: 0.7;
         }
     }

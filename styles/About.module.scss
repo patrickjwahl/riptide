@@ -175,6 +175,7 @@
 }
 
 .pedigreeTitle {
+    color: variables.$foreground-color;
     padding: 10px;
     border-radius: 100px;
     border: 2px solid variables.$foreground-color;
@@ -189,13 +190,14 @@
     margin-bottom: -5px;
     margin-top: -30px;
     text-align: center;
-    color: variables.$foreground-color;
+    color: variables.$background-color;
     font-size: 30px;
     position: relative;
     z-index: 5000;
 }
 
 .checkList {
+    color: variables.$foreground-color;
     margin-top: 0;
     margin-left: 40px;
     margin-bottom: -20px;
@@ -256,7 +258,8 @@
 
 .sectionContent {
     background-color: variables.$theme-dark;
-    padding: 20px;
+    color: variables.$background-color;
+    padding: 40px 20px;
     margin-bottom: 30px;
     border-radius: 10px;
 

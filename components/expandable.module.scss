@@ -14,7 +14,8 @@
 }
 
 .container {
-    width: 100%
+    width: 100%;
+    color: variables.$foreground-color;
 }
 
 .header {

@@ -2,6 +2,7 @@
 
 @media screen and (max-width: 700px) {
     .swiperSlide {
+        color: variables.$background-color;
         padding-left: calc(12vw) !important;
         padding-right: calc(12vw) !important;
     }
@@ -13,11 +14,12 @@
 }
 
 .swiper {
+    color: variables.$foreground-color;
     width: 50vw;
     height: 400px;
     background-color: variables.$background-color;
     border-radius: 50px;
-    outline: 4px solid variables.$foreground-color;
+    outline: 4px solid variables.$background-color;
     outline-offset: 8px;
 }
 
