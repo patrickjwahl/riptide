@@ -5,6 +5,8 @@ import cn from 'classnames';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { MdMenu, MdClose } from 'react-icons/md';
+import instaLogo from '../public/img/resized/Instagram_Glyph_Gradient.svg';
+import yelpLogo from '../public/img/resized/yelp_burst.svg';
 
 interface Props {
     /** Should background be transparent? */
@@ -41,7 +43,16 @@ const Navbar = ({ isTransparent = false, dropdownOpen, toggleDropdown, ...otherP
                     <div className={styles.contactContainer}><Link href="#contact-form"><a><li className={styles.navButton}>
                         <div className={styles.button}>SCHEDULE A CONSULTATION</div>
                     </li></a></Link>
-                        <div className={styles.email}><a href='mailto:curtis@caravank9.com' target="_blank">curtis@caravank9.com</a></div>
+                        <div className={styles.contactList}>
+                            <div className={styles.email}><a href='mailto:curtis@caravank9.com' target="_blank">curtis@caravank9.com</a></div>
+                            <div className={styles.email}>&#x2022;</div>
+                            <a href='https://www.instagram.com/caravank9/' target='_blank'>
+                                <Image src={instaLogo} alt="instagram" />
+                            </a>
+                            <a href='https://www.yelp.com/biz/caravan-k9-jacksonville' target='_blank'>
+                                <Image src={yelpLogo} alt="yelp" />
+                            </a>
+                        </div>
                     </div>
                 </ul>
                 <div className={styles.dropdownButton} onClick={toggleDropdown}>
@@ -57,6 +68,14 @@ const Navbar = ({ isTransparent = false, dropdownOpen, toggleDropdown, ...otherP
             <li onClick={toggleDropdown}><Link href="/faq"><a>FAQ</a></Link></li>
             <li onClick={toggleDropdown}><Link href="/blog"><a>BLOG</a></Link></li>
             <li className={styles.highlightColor} onClick={toggleDropdown}><Link href="#contact-form"><a>SCHEDULE A CONSULTATION</a></Link></li>
+            <li className={styles.mobileSocialsContainer}>
+                <a href='https://www.instagram.com/caravank9/' target='_blank'>
+                    <Image src={instaLogo} alt="instagram" />
+                </a>
+                <a href='https://www.yelp.com/biz/caravan-k9-jacksonville' target='_blank'>
+                    <Image src={yelpLogo} alt="yelp" />
+                </a>
+            </li>
         </ul>
         </>
     )

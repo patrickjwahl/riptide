@@ -5,7 +5,7 @@ import Reviews from '../components/reviews';
 import Image from 'next/image';
 import backgroundImage from '../public/img/resized/hero2.jpeg';
 import backgroundImageMobile from '../public/img/resized/boardtrain_portrait.jpeg';
-import programImage1 from '../public/img/resized/boardtrain2.jpeg';
+import programImage1 from '../public/img/resized/twodogs.jpeg';
 import programImage2 from '../public/img/resized/program2.jpeg'
 import programImage3 from '../public/img/resized/jump.jpeg'
 import reviewsImage from '../public/img/resized/den-attila.jpeg';
